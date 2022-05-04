@@ -1,6 +1,5 @@
 #pragma once
 #include<exception>
-#include<iostream>
 
 template<typename T>
 class Vector
@@ -17,11 +16,11 @@ private:
 public:
 	Vector();
 	Vector(const Vector&);
-	const Vector& operator=(const Vector&);
+	const T& operator=(const Vector&);
 	T& operator[](int);
-	const size_t getSize() const;
+	size_t getSize();
 
-	void push_back(const T);
+	void push_back(const T&);
 
 	~Vector();
 
@@ -50,7 +49,7 @@ void Vector<T>::resize()
 	size++;
 	if (size >= capacity) {
 		T* newData = new T[capacity * 2];
-		for (int i = 0; i < size - 1; i++) {
+		for (int i = 0; i < size; i++) {
 			newData[i] = data[i];
 		}
 		free();
@@ -62,7 +61,7 @@ void Vector<T>::resize()
 template<typename T>
 Vector<T>::Vector()
 {
-	capacity = 2;
+	capacity = 10;
 	size = 0;
 	data = new T[capacity];
 }
@@ -74,7 +73,7 @@ Vector<T>::Vector(const Vector& vec)
 }
 
 template<typename T>
-const Vector<T>& Vector<T>::operator=(const Vector& vec)
+const T& Vector<T>::operator=(const Vector& vec)
 {
 	if (this != &vec) {
 		free();
@@ -83,25 +82,21 @@ const Vector<T>& Vector<T>::operator=(const Vector& vec)
 	return *this;
 }
 
-
-
 template<typename T>
 T& Vector<T>::operator[](int index)
 {
-	std::cout << *data[size];
 	if (index < size) return data[index];
-	else return data[0];
-	//else throw new std::exception("out of bounds");
+	else throw new std::exception("out of bounds");
 }
 
 template<typename T>
-const size_t Vector<T>::getSize() const
+size_t Vector<T>::getSize()
 {
 	return size;
 }
 
 template<typename T>
-void Vector<T>::push_back(const T el)
+void Vector<T>::push_back(const T& el)
 {
 	data[size] = el;
 	resize();

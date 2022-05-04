@@ -1,15 +1,3 @@
 ﻿  main.cpp
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(33,14): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Vector.h(91,15): error C2100: illegal indirection
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Vector.h(90): message : while compiling class template member function 'T &Vector<T>::operator [](int)'
-          with
-          [
-              T=int
-          ]
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\main.cpp(14): message : see reference to function template instantiation 'T &Vector<T>::operator [](int)' being compiled
-          with
-          [
-              T=int
-          ]
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\main.cpp(11): message : see reference to class template instantiation 'Vector<int>' being compiled
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Vector.h(91,12): error C2088: '<<': illegal for class
+  Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe
