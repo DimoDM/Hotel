@@ -1,7 +1,9 @@
 #include<iostream>
+#include"Hotel.h"
 using namespace std;
 
 int main()
 {
-	cout << "bachka";
+	Hotel hotel;
+	hotel.getNumOfRooms();
 }
