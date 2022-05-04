@@ -14,7 +14,7 @@ class Hotel
 public:
 
 	Hotel();
-	void getNumOfRooms() {
+	void getNumOfRooms() {/*
 		//getline(roomsFile);
 		int i = 0;
 		int id;
@@ -28,7 +28,10 @@ public:
 			
 			i++;
 		}
-		std::cout << i;
+		std::cout << i;*/
+
+		int curPos = roomsFile.tellg();
+
 	}
 	//Hotel(const char*);
 
