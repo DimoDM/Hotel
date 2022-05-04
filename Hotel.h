@@ -9,8 +9,9 @@ using namespace std;
 class Hotel
 {
 	Vector<Room> rooms;
+	Vector<Room> reservationList;
 	std::fstream roomsFile;
-	//Date currentDate;
+	Date currentDate;
 
 public:
 
@@ -18,7 +19,7 @@ public:
 	void getNumOfRooms() {
 		cout << rooms.getSize() << endl;
 		for (int i = 0; i < rooms.getSize(); i++) {
-			cout << i << " " << rooms[i].getId() << " " << rooms[i].getNumberBeds()<<endl;
+			cout << i << " " << rooms[i].id << " " << rooms[i].numberBeds<<endl;
 			//system("pause");
 		}
 

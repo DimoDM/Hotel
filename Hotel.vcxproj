@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Date.h" />
     <ClInclude Include="Hotel.h" />
+    <ClInclude Include="ReservationList.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

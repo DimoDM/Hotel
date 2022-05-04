@@ -1,6 +1,8 @@
 #include "Hotel.h"
 using namespace std;
 
+
+
 Hotel::Hotel()
 {
 	roomsFile.open("Rooms.csv");
@@ -19,7 +21,21 @@ Hotel::Hotel()
 
 void Hotel::regGuest()
 {
+	cout << "type 0 to register now" << endl << "type 1 to make reservation" << endl;
+	bool choice;
+	cin >> choice;
+	if (choice) {
 
+	}
+	else {
+		cout << "Enter period of staying in days: ";
+		int period;
+		cin >> period;
+		cout << "Enter number of the room: ";
+		int id;
+		cin >> id;
+
+	}
 }
 
 void Hotel::searchRoom(const int, const Interval)
