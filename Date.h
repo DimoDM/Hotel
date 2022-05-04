@@ -50,6 +50,12 @@ struct Interval
 	Date date;
 	int periodInDays = 0;
 
+	Interval(Date date, int period) : date(date), periodInDays(period) {
+
+	}
+	Interval() {
+	}
+
 	bool operator==(const Interval& interval) const {
 		if (date < interval.date) {
 			if ((date + periodInDays) < interval.date) return false;

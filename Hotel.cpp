@@ -34,7 +34,8 @@ void Hotel::regGuest()
 		cout << "Enter number of the room: ";
 		int id;
 		cin >> id;
-
+		Reservation res(id, Interval(currentDate, period));
+		resList.addToList(res);
 	}
 }
 

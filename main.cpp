@@ -7,6 +7,7 @@ int main()
 {
 	Hotel hotel;
 	hotel.getNumOfRooms();
+	hotel.regGuest();
 	system("pause");
 
 }

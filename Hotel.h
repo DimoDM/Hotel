@@ -1,5 +1,6 @@
 #pragma once
 #include"Room.h"
+#include"ReservationList.h"
 #include<fstream>
 #include<iostream>
 #include<string.h>
@@ -9,7 +10,7 @@ using namespace std;
 class Hotel
 {
 	Vector<Room> rooms;
-	Vector<Room> reservationList;
+	ReservationList resList;
 	std::fstream roomsFile;
 	Date currentDate;
 
