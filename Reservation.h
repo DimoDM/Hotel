@@ -1,6 +1,7 @@
 #pragma once
 #include"Room.h"
 #include"Date.h"
+#pragma warning(disable : 4996)
 class Reservation : Room
 {
 	char* name;
