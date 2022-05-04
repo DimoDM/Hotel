@@ -1,6 +1,6 @@
 #pragma once
 #include"Date.h"
-
+#pragma warning(disable : 4996)
 class Room
 {
 
@@ -8,7 +8,7 @@ class Room
 	int id;
 	int numberBeds;
 	bool isOccupied;
-	Interval *interval;
+	Interval interval;
 	bool isClosed;
 	//void copyFrom(const Room&);
 	//void free();
@@ -16,6 +16,7 @@ class Room
 public:
 
 	Room();
+	void setId(const int);
 	void setReservationName(const char*);
 	void setNumberBeds(const int);
 	void setInterval(const Interval);

@@ -1,2 +1,3 @@
 ﻿  main.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(33,14): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe

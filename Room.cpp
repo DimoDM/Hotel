@@ -10,6 +10,11 @@ Room::Room()
 	isClosed = true;
 }
 
+void Room::setId(const int id)
+{
+	if (id > 0) this->id = id;
+}
+
 void Room::setReservationName(const char* name)
 {
 	if (&reservationName != &name) {
