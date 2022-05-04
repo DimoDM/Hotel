@@ -21,10 +21,12 @@ public:
 	size_t getSize();
 
 	void push_back(const T&);
+	void pop_back();
 
 	~Vector();
 
 };
+
 
 template<typename T>
 void Vector<T>::copyFrom(const Vector& vec)
@@ -100,6 +102,12 @@ void Vector<T>::push_back(const T& el)
 {
 	data[size] = el;
 	resize();
+}
+
+template<typename T>
+void Vector<T>::pop_back()
+{
+	size--;
 }
 
 template<typename T>

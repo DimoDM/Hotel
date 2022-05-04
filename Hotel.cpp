@@ -1,6 +1,4 @@
 #include "Hotel.h"
-#include<iostream>
-#include <string>
 using namespace std;
 
 Hotel::Hotel()
@@ -10,19 +8,13 @@ Hotel::Hotel()
 		perror("Can't open file");
 		return;
 	}
-	string s;
-	getline(roomsFile, s);
-	getline(roomsFile, s);
-	getline(roomsFile, s);
-	getline(roomsFile, s);
-	getline(roomsFile, s);
-	int roomsInFloor;
-	int floors;
-	roomsFile >> roomsInFloor;
-	roomsFile.get();
-	roomsFile >> floors;
-	cout << roomsInFloor << floors << endl;
-	//system("pause");
+	roomsFile.seekg(7, ios::beg);
+	Room tempRoom;
+	while (!roomsFile.eof()) {
+		roomsFile >> tempRoom;
+		rooms.push_back(tempRoom);
+	}
+	rooms.pop_back(); // strange behavior from eof couses last element to be saved twice
 }
 
 void Hotel::regGuest()

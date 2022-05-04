@@ -3,34 +3,24 @@
 #include<fstream>
 #include<iostream>
 #include<string.h>
+#include"Vector.h"
 using namespace std;
 
 class Hotel
 {
-	Room rooms[20];
+	Vector<Room> rooms;
 	std::fstream roomsFile;
 	//Date currentDate;
 
 public:
 
 	Hotel();
-	void getNumOfRooms() {/*
-		//getline(roomsFile);
-		int i = 0;
-		int id;
-		int beds;
-		while (!roomsFile.eof()) {
-			roomsFile >> id;
-			roomsFile >> beds;
-			std::cout << id << " " << beds << std::endl;
-			rooms[i].setNumberBeds(beds);
-			rooms[i].setId(id);
-			
-			i++;
+	void getNumOfRooms() {
+		cout << rooms.getSize() << endl;
+		for (int i = 0; i < rooms.getSize(); i++) {
+			cout << i << " " << rooms[i].getId() << " " << rooms[i].getNumberBeds()<<endl;
+			//system("pause");
 		}
-		std::cout << i;*/
-
-		int curPos = roomsFile.tellg();
 
 	}
 	//Hotel(const char*);
