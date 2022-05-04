@@ -10,12 +10,15 @@ class Room
 	bool isOccupied;
 	Interval interval;
 	bool isClosed;
-	//void copyFrom(const Room&);
-	//void free();
+
+	void copyFrom(const Room&);
+	void free();
 
 public:
 
 	Room();
+	Room(const Room&);
+	const Room& operator=(const Room&);
 	void setId(const int);
 	void setReservationName(const char*);
 	void setNumberBeds(const int);
