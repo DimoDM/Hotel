@@ -22,7 +22,7 @@ Hotel::Hotel()
 	roomsFile.get();
 	roomsFile >> floors;
 	cout << roomsInFloor << floors << endl;
-	system("pause");
+	//system("pause");
 }
 
 void Hotel::regGuest()
