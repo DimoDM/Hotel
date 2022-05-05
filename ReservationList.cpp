@@ -6,34 +6,23 @@ void ReservationList::saveChanges()
 	file.seekp(0, std::ios::beg);
 	for (int i = 0; i < data.getSize(); i++) {
 		file << data[i];
+		//data[i] >> file;
 		cout << "saved change: " << i << endl;
 	}
 }
 void ReservationList::getList()
 {
 		Reservation res;
-		size_t val;
+		size_t val = getFileSize();
 		file.seekg(0, std::ios::beg);
-		while (!file.eof()) {
-			file.read((char*)&val, sizeof(size_t));
-			res.setId(val);
+		while (file.tellg() < val) {
 
-			file.read((char*)&val, sizeof(size_t));
-			cout << "size: " << val << endl;
-			char* newName = new char[val];
-			file.read((char*)newName, val);
-			newName[val] = '\0';
-			Interval interval;
-			file.read((char*)&interval, sizeof(Interval));
-
-			res.setName(newName);
-			res.setInterval(interval);
+			file >> res;
 			data.push_back(res);
 			cout << "push" << endl;
-			//TODO find out this shit
-			//if(newName != nullptr) delete[] newName;
 		}
-		data.pop_back();
+		printList();
+		//data.pop_back();
 		file.close();
 		file.open("resList.dat", ios::binary | ios::in | ios::out | ios::ate | ios::trunc);
 		if (!file.is_open()) {
@@ -66,7 +55,10 @@ ReservationList::ReservationList()
 		perror("binary file error");
 		exit(1);
 	}
-	if(getFileSize() > 0) getList();
+	if (getFileSize() > 0) {
+		getList();
+		saveChanges();
+	}
 }
 
 
@@ -82,6 +74,7 @@ void ReservationList::addToList(const Reservation& res)
 	if (!isInList(res)) {
 		cout << "not in list";
 		data.push_back(res);
+		saveChanges();
 		//cout << "add to list, size: " << data.getSize() << endl;
 	}
 }
@@ -103,6 +96,5 @@ bool ReservationList::isInList(const Reservation& res)
 
 ReservationList::~ReservationList()
 {
-	saveChanges();
 	file.close();
 }

@@ -2,10 +2,13 @@
 #include"Room.h"
 #include"Date.h"
 #pragma warning(disable : 4996)
-class Reservation : Room
+class Reservation : public Room
 {
 	Interval interval;
 	char* name;
+
+	void copyName(const char*);
+	void free();
 
 public:
 
@@ -18,13 +21,14 @@ public:
 	void setName(const char*);
 	void setInterval(const Interval&);
 	bool operator==(const Reservation&);
+	const Reservation& operator=(const Reservation&);
 
 	const char* getName() const;
 	const size_t& getId()const;
 	const Interval& getInterval() const;
 
 	~Reservation();
-};
 
-std::fstream& operator<<(std::fstream&, const Reservation&);
-std::fstream& operator>>(std::fstream&, Reservation&);
+	friend std::fstream& operator<<(std::fstream&, const Reservation&);
+	friend std::fstream& operator>>(std::fstream&, Reservation&);
+};

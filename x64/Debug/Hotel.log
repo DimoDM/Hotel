@@ -1,9 +1,3 @@
-﻿  Hotel.cpp
-  Reservation.cpp
-  ReservationList.cpp
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(49,22): warning C4267: 'argument': conversion from 'size_t' to 'std::ios_base::seekdir', possible loss of data
-  Room.cpp
-  main.cpp
-  Generating Code...
+﻿  Reservation.cpp
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(68): warning C4715: 'Interval::operator==': not all control paths return a value
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe
