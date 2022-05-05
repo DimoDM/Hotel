@@ -7,7 +7,13 @@ int main()
 {
 	Hotel hotel;
 	hotel.getNumOfRooms();
-	hotel.regGuest();
+	while (true) {
+		hotel.regGuest();
+		cout << "continue?";
+		bool s;
+		cin >> s;
+		if (!s) break;
+	}
 	system("pause");
 
 }

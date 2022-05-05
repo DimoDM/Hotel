@@ -25,7 +25,7 @@ void Hotel::regGuest()
 	bool choice;
 	cin >> choice;
 	if (choice) {
-
+		resList.printList();
 	}
 	else {
 		cout << "Enter period of staying in days: ";
@@ -35,8 +35,9 @@ void Hotel::regGuest()
 		int id;
 		cin >> id;
 		Reservation res(id, Interval(currentDate, period));
+		resList.addToList(res);
 		resList.printList();
-		//resList.addToList(res);
+		
 	}
 }
 

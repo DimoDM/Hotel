@@ -20,10 +20,11 @@ public:
 	bool operator==(const Reservation&);
 
 	const char* getName() const;
-	const size_t getId()const;
+	const size_t& getId()const;
 	const Interval& getInterval() const;
 
 	~Reservation();
 };
 
 std::fstream& operator<<(std::fstream&, const Reservation&);
+std::fstream& operator>>(std::fstream&, Reservation&);

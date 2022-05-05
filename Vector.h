@@ -49,7 +49,7 @@ template<typename T>
 void Vector<T>::resize()
 {
 	size++;
-	if (size >= capacity) {
+	if (size == capacity) {
 		T* newData = new T[capacity * 2];
 		for (int i = 0; i < size; i++) {
 			newData[i] = data[i];

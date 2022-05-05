@@ -10,6 +10,8 @@ class ReservationList
 	std::fstream file;
 
 	void saveChanges();
+	void getList();
+	 size_t getFileSize() ;
 
 public:
 
