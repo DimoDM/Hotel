@@ -16,20 +16,19 @@ void Reservation::free()
 
 Reservation::Reservation() : Room()
 {
-	copyName("null");
+	copyName("unknown");
 }
 
 Reservation::Reservation(const Room& room, const Interval& interval) : Room()
 {
-	copyName("null");
+	copyName("unknown");
 	setId(room.id);
-	//setBeds(room.numberBeds);
 	setInterval(interval);
 }
 
 Reservation::Reservation(const int& id, const Interval& interval)
 {
-	copyName("null");
+	copyName("unknown");
 	setId(id);
 	setInterval(interval);
 }
@@ -98,7 +97,6 @@ Reservation::~Reservation()
 std::fstream& operator<<(std::fstream& stream, const Reservation& res)
 {
 	size_t size = strlen(res.name);
-	std::cout << "size->" << size;
 	stream.write((const char*)&res.id, sizeof(size_t));
 	stream.write((const char*)&size, sizeof(size_t));
 	stream.write((const char*)res.name, size);
@@ -118,6 +116,5 @@ std::fstream& operator>>(std::fstream& stream, Reservation& res)
 	res.name[val] = '\0';
 
 	stream.read((char*)&res.interval, sizeof(Interval));
-
 	return stream;
 }

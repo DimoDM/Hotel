@@ -6,8 +6,6 @@ void ReservationList::saveChanges()
 	file.seekp(0, std::ios::beg);
 	for (int i = 0; i < data.getSize(); i++) {
 		file << data[i];
-		//data[i] >> file;
-		cout << "saved change: " << i << endl;
 	}
 }
 void ReservationList::getList()
@@ -16,13 +14,9 @@ void ReservationList::getList()
 		size_t val = getFileSize();
 		file.seekg(0, std::ios::beg);
 		while (file.tellg() < val) {
-
 			file >> res;
 			data.push_back(res);
-			cout << "push" << endl;
 		}
-		printList();
-		//data.pop_back();
 		file.close();
 		file.open("resList.dat", ios::binary | ios::in | ios::out | ios::ate | ios::trunc);
 		if (!file.is_open()) {
@@ -57,7 +51,6 @@ ReservationList::ReservationList()
 	}
 	if (getFileSize() > 0) {
 		getList();
-		saveChanges();
 	}
 }
 
@@ -72,11 +65,10 @@ void ReservationList::addToList(const Room& room, const Interval& interval)
 void ReservationList::addToList(const Reservation& res)
 {
 	if (!isInList(res)) {
-		cout << "not in list";
 		data.push_back(res);
 		saveChanges();
-		//cout << "add to list, size: " << data.getSize() << endl;
 	}
+	else cout << "room is not avaible :)" << endl;
 }
 
 bool ReservationList::isInList(const Room& room, const Interval& interval)
@@ -88,7 +80,6 @@ bool ReservationList::isInList(const Room& room, const Interval& interval)
 bool ReservationList::isInList(const Reservation& res)
 {
 	for (int i = 0; i < data.getSize(); i++) {
-		cout<<res.getInterval().date.year << " " << data[i].getInterval().date.year << endl;
 		if (data[i] == res) return true;
 	}
 	return false;

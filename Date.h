@@ -65,6 +65,7 @@ struct Interval
 			if ((interval.date + periodInDays) < date) return false;
 			return true;
 		}
+		else return true;
 	}
 	bool operator<(const Interval& interval) {
 		if (date.year < interval.date.year) return true;
