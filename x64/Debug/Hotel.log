@@ -1,3 +1,2 @@
 ﻿  ReservationList.cpp
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(14,9): warning C4101: 'val': unreferenced local variable
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe

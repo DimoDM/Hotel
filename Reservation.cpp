@@ -1,4 +1,5 @@
 #include"Reservation.h"
+#include<iostream>
 
 Reservation::Reservation() : Room()
 {
@@ -55,7 +56,32 @@ const char* Reservation::getName() const
 	return name;
 }
 
+const size_t Reservation::getId() const 
+{
+	return id;
+}
+
+const Interval& Reservation::getInterval() const
+{
+	return interval;
+}
+
 Reservation::~Reservation()
 {
 	delete[] name;
+}
+
+std::fstream& operator<<(std::fstream& stream, const Reservation& res)
+{
+	size_t id = res.getId();
+	size_t size = strlen(res.getName());
+	char* name = new char[size];
+	Interval interval = res.getInterval();
+	strcpy(name, res.getName());
+	stream.write((const char*)&id, sizeof(size_t));
+	stream.write((const char*)&size, sizeof(size_t));
+	std::cout << "size: " << size << std::endl;
+	stream.write(name, size);
+	stream.write((const char*)&interval, sizeof(Interval));
+	return stream;
 }

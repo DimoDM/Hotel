@@ -9,9 +9,12 @@ class ReservationList
 	Vector<Reservation> data;
 	std::fstream file;
 
+	void saveChanges();
+
 public:
 
 	ReservationList();
+	void printList();
 	void addToList(const Room&, const Interval&);
 	void addToList(const Reservation&);
 	bool isInList(const Room&, const Interval&);

@@ -4,8 +4,8 @@
 #pragma warning(disable : 4996)
 class Reservation : Room
 {
-	char* name;
 	Interval interval;
+	char* name;
 
 public:
 
@@ -20,6 +20,10 @@ public:
 	bool operator==(const Reservation&);
 
 	const char* getName() const;
+	const size_t getId()const;
+	const Interval& getInterval() const;
 
 	~Reservation();
 };
+
+std::fstream& operator<<(std::fstream&, const Reservation&);

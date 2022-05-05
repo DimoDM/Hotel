@@ -35,7 +35,8 @@ void Hotel::regGuest()
 		int id;
 		cin >> id;
 		Reservation res(id, Interval(currentDate, period));
-		resList.addToList(res);
+		resList.printList();
+		//resList.addToList(res);
 	}
 }
 
