@@ -3,6 +3,42 @@ using namespace std;
 
 
 
+bool Hotel::isValidRoomId(const int& id)
+{
+	for (int i = 0; i < rooms.getSize(); i++) {
+		if (id == rooms[i].id) return true;
+	}
+	return false;
+}
+
+void Hotel::makeRegistration(const char* name, const Date& date)
+{
+	cout << "Enter period of staying in days: ";
+	int period;
+	cin >> period;
+	cout << "Enter number of the room: ";
+	int id;
+	cin >> id;
+	Reservation res(name, id, Interval(date, period));
+	if (isValidRoomId(id)) resList.addToList(res);
+	else cout << "There is no such room" << endl;
+}
+void Hotel::makeRegistration()
+{
+	makeRegistration("unknown", currentDate);
+}
+
+void Hotel::makeReservation()
+{
+	char name[1024];
+	cout << "Enter name for reservation: ";
+	cin >> name;
+	cout << "enter YY/MM/DD with space between them: ";
+	Date date;
+	cin >> date.year >> date.mounth >> date.day;
+	makeRegistration(name, date);
+}
+
 Hotel::Hotel()
 {
 	roomsFile.open("Rooms.csv");
@@ -25,19 +61,12 @@ void Hotel::regGuest()
 	bool choice;
 	cin >> choice;
 	if (choice) {
+		makeReservation();
 		resList.printList();
 	}
 	else {
-		cout << "Enter period of staying in days: ";
-		int period;
-		cin >> period;
-		cout << "Enter number of the room: ";
-		int id;
-		cin >> id;
-		Reservation res(id, Interval(currentDate, period));
-		resList.addToList(res);
+		makeRegistration();
 		resList.printList();
-		
 	}
 }
 

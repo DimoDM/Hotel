@@ -14,6 +14,12 @@ class Hotel
 	std::fstream roomsFile;
 	Date currentDate;
 
+	bool isValidRoomId(const int&);
+	void makeRegistration(const char* name, const Date& date);
+	void makeRegistration();
+	void makeReservation();
+
+
 public:
 
 	Hotel();

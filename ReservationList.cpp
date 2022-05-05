@@ -36,7 +36,7 @@ void ReservationList::printList()
 {
 	cout << data.getSize() << endl;
 	for (int i = 0; i < data.getSize(); i++) {
-		cout << data[i].getName() << "-"<<strlen(data[i].getName()) << " " << data[i].getId() << endl;
+		cout << data[i];
 	}
 }
 ReservationList::ReservationList()
@@ -89,3 +89,4 @@ ReservationList::~ReservationList()
 {
 	file.close();
 }
+

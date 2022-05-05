@@ -14,7 +14,10 @@ public:
 
 	Reservation();
 	Reservation(const Room&, const Interval&);
-	Reservation(const int&, const Interval&);
+	Reservation(const int& id, const Interval& interval);
+	Reservation(const char* name, const int& id, const Interval& interval) : Reservation(id, interval) {
+		copyName(name);
+	}
 
 	void setId(const size_t&);
 	void setBeds(const size_t&);
@@ -31,4 +34,6 @@ public:
 
 	friend std::fstream& operator<<(std::fstream&, const Reservation&);
 	friend std::fstream& operator>>(std::fstream&, Reservation&);
+	friend std::ostream& operator<<(std::ostream&, const Reservation&);
+	friend std::istream& operator>>(std::istream&, Reservation&);
 };

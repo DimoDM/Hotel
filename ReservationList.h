@@ -3,6 +3,8 @@
 #include"Room.h"
 #include"Reservation.h"
 #include<fstream>
+#include<ostream>
+#include<istream>
 class ReservationList
 {
 
@@ -21,7 +23,10 @@ public:
 	void addToList(const Reservation&);
 	bool isInList(const Room&, const Interval&);
 	bool isInList(const Reservation& res);
+	void makeRaport(const Interval&);
 	//void removeFromList(const Room&, const Interval&);
 
+	friend std::ostream& operator<<(std::ostream&, const ReservationList&);
+	
 	~ReservationList();
 };

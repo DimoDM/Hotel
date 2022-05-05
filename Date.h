@@ -1,4 +1,5 @@
 #pragma once
+#include<ostream>
 
 struct Date
 {
@@ -56,6 +57,9 @@ struct Interval
 	Interval() {
 	}
 
+	
+
+
 	bool operator==(const Interval& interval) const {
 		if (date < interval.date) {
 			if ((date + periodInDays) < interval.date) return false;
@@ -78,5 +82,10 @@ struct Interval
 			return false;
 		}
 		return false;
+	}
+
+	friend std::ostream& operator<<(std::ostream& stream, const Interval& interval) {
+		stream << interval.date.year << " " << interval.date.mounth << " " << interval.date.day << " ,period: " << interval.periodInDays;
+		return stream;
 	}
 };

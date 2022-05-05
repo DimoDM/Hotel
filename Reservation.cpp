@@ -118,3 +118,15 @@ std::fstream& operator>>(std::fstream& stream, Reservation& res)
 	stream.read((char*)&res.interval, sizeof(Interval));
 	return stream;
 }
+
+
+std::ostream& operator<<(std::ostream& stream, const Reservation& res)
+{
+	stream << "client: " << res.getName() << " ,id of room: " << res.getId() << " ,Date: " << res.getInterval() << '\n';
+	return stream;
+}
+
+const std::istream& operator>>(const std::istream& stream, Reservation& res)
+{
+	return stream;
+}
