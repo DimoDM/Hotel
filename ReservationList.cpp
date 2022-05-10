@@ -54,6 +54,16 @@ ReservationList::ReservationList()
 	}
 }
 
+const size_t ReservationList::getDataSize() const
+{
+	return data.getSize();
+}
+
+Vector<Reservation>& ReservationList::getData()
+{
+	return data;
+}
+
 
 void ReservationList::addToList(const Room& room, const Interval& interval)
 {

@@ -1,6 +1,7 @@
 #pragma once
 #include"Room.h"
 #include"Date.h"
+#include"Interval.h"
 #pragma warning(disable : 4996)
 class Reservation : public Room
 {
@@ -27,7 +28,7 @@ public:
 	const Reservation& operator=(const Reservation&);
 
 	const char* getName() const;
-	const size_t& getId()const;
+	const size_t& getId() const;
 	const Interval& getInterval() const;
 
 	~Reservation();

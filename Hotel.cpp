@@ -20,6 +20,7 @@ void Hotel::makeRegistration(const char* name, const Date& date)
 	int id;
 	cin >> id;
 	Reservation res(name, id, Interval(date, period));
+	cout <<(bool) isValidRoomId(id) << endl;
 	if (isValidRoomId(id)) resList.addToList(res);
 	else cout << "There is no such room" << endl;
 }
@@ -73,7 +74,7 @@ void Hotel::update()
 	case 1: regGuest(); break;
 	case 2: showFreeRooms(); break;
 	case 3: freeRoom(); break;
-	case 4: break;
+	case 4: makeReport(); break;
 	case 5: searchRoom(); break;
 	case 6: break;
 	default: cout << "Invalid input" << endl; break;
@@ -99,7 +100,18 @@ void Hotel::makeReport()
 {
 	Interval interval;
 	interval.init();
-	//std::ofstream f("report.txt", std::ios::out | std::ios::app);
+	String fileName("report");
+	(((((fileName += interval.getDate().getYear()) += "-")
+		+= interval.getDate().getMounth()) += "-")
+		+= interval.getDate().getDay()) += ".txt";
+
+	std::ofstream file(fileName.c_str(), std::ios::out | std::ios::app);
+	for (int i = 0; i < resList.getDataSize(); i++) {
+		//TODO
+		//fix == operation cuz I think don't work
+		if (interval == resList.getData()[i].getInterval())
+			file << resList.getData()[i];
+	}
 	
 }
 
@@ -138,9 +150,10 @@ void Hotel::searchRoom()
 
 const Room& Hotel::searchRoom(const int beds, const Interval interval)
 {
+	//TODO better
 	int currentMinBeds = rooms[0].numberBeds > beds ? rooms[0].numberBeds : beds;
 	int id = 0;
-	for (int i = 0; i < rooms.getSize(); i++) {
+	for (int i = rooms.getSize() - 1; i >= 0; i--) {
 		if (currentMinBeds >= rooms[i].numberBeds && rooms[i].numberBeds >= beds) {
 			currentMinBeds = rooms[i].numberBeds;
 			id = i;

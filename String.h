@@ -4,6 +4,8 @@
 
 
 #include <fstream>
+#pragma warning (disable:4996)
+
 class String
 {
 	char* str;

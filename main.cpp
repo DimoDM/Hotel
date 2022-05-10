@@ -9,7 +9,7 @@ int main()
 {
 	
 	Hotel hotel;
-
+	//hotel.getNumOfRooms();
 	while (hotel.getIsRunning()) {
 
 		hotel.update();

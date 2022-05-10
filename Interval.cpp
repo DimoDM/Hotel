@@ -25,7 +25,7 @@ void Interval::setDate(const Date date)
 
 void Interval::setPeriod(const size_t period)
 {
-	if (period > 0 && period < 30) this->period = period;
+	if (period > 0 && period < 100) this->period = period;
 	else {
 		std::cout << "If Kamen enter input(mainata ti)\nElse, invalid period. Default of 1 day is set.\n";
 		this->period = 1;

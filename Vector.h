@@ -18,7 +18,7 @@ public:
 	Vector(const Vector&);
 	const T& operator=(const Vector&);
 	T& operator[](int);
-	size_t getSize();
+	const size_t getSize() const;
 
 	void push_back(const T&);
 	void pop_back();
@@ -92,7 +92,7 @@ T& Vector<T>::operator[](int index)
 }
 
 template<typename T>
-size_t Vector<T>::getSize()
+const size_t Vector<T>::getSize() const
 {
 	return size;
 }

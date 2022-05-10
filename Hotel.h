@@ -4,7 +4,7 @@
 #include"Interval.h"
 #include<fstream>
 #include<iostream>
-#include<string.h>
+#include"String.h"
 #include"Vector.h"
 using namespace std;
 

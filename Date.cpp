@@ -34,7 +34,7 @@ void Date::init()
 	std::cin >> date.mounth;
 	setMounth(date.mounth);
 	std::cout << "enter day: ";
-	std::cout << date.day;
+	std::cin >> date.day;
 	setDay(date.day);
 }
 

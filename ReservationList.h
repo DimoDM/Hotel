@@ -2,6 +2,7 @@
 #include"Vector.h"
 #include"Room.h"
 #include"Reservation.h"
+#include"Interval.h"
 #include<fstream>
 #include<ostream>
 #include<istream>
@@ -18,6 +19,8 @@ class ReservationList
 public:
 
 	ReservationList();
+	const size_t getDataSize() const;
+	Vector<Reservation>& getData();
 	void printList();
 	void addToList(const Room&, const Interval&);
 	void addToList(const Reservation&);

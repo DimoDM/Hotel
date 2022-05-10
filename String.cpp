@@ -53,13 +53,13 @@ String::String(size_t n)
 		str[numSize - 1 - i] = (n % 10) + '0';
 	size = numSize;
 }
-
+/*
 String::String(const char* data)
 {
 	size = strlen(data);
 	str = new char[size + 1];
 	strcpy(str, data);
-}
+}*/
 
 String::String(const String& other)
 {
