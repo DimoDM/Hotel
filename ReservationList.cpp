@@ -85,6 +85,27 @@ bool ReservationList::isInList(const Reservation& res)
 	return false;
 }
 
+void ReservationList::removeFromList(const Room& room, const Interval& interval)
+{
+	Reservation res(room, interval);
+	removeFromList(res);
+}
+
+void ReservationList::removeFromList(const Reservation& res)
+{
+	for (int i = 0; i < data.getSize(); i++) {
+		if (res == data[i]) {
+			data[i] = data[data.getSize() - 1];
+			/*
+			for (int j = i; j < data.getSize() - 1; j++) {
+				data[j] = data[j + 1];
+			}*/
+			data.pop_back();
+			break;
+		}
+	}
+}
+
 ReservationList::~ReservationList()
 {
 	saveChanges();

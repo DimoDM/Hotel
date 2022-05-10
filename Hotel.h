@@ -13,9 +13,11 @@ class Hotel
 	ReservationList resList;
 	std::fstream roomsFile;
 	Date currentDate;
+	bool isRunning;
 
-	bool isValidRoomId(const int&);
+	int isValidRoomId(const int&);
 	Date& enterDate(Date&);
+	Date& enterDate();
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();
@@ -24,6 +26,9 @@ class Hotel
 public:
 
 	Hotel();
+
+	void update();
+
 	void getNumOfRooms() {
 		cout << rooms.getSize() << endl;
 		for (int i = 0; i < rooms.getSize(); i++) {
@@ -36,9 +41,14 @@ public:
 
 	void regGuest(); // make reservation for room
 	void makeReport(); //make txt file for room's busyness
-	//void showFreeRooms(); // show free rooms for a date
-	//void freeRoom(); // make room free
+	void showFreeRooms(); // show free rooms for a date
+	void freeRoom(); // make room free
 	//void occupiedReport();
-	void searchRoom(const int, const Interval);
+
+	void searchRoom();
+	const Room& searchRoom(const int, const Interval);
 	//void closeRoom();
+
+
+	const bool getIsRunning();
 };

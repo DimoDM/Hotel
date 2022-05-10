@@ -9,13 +9,11 @@ int main()
 {
 	
 	Hotel hotel;
-	hotel.getNumOfRooms();
-	while (true) {
-		hotel.regGuest();
-		cout << "continue?";
-		bool s;
-		cin >> s;
-		if (!s) break;
+
+	while (hotel.getIsRunning()) {
+
+		hotel.update();
+
 	}
 	system("pause");
 
