@@ -3,14 +3,11 @@
 #include<iostream>
 using namespace std;
 
-
-Room::Room()
+Room::Room(size_t id = 0, size_t numberBeds = 0)
 {
-	id = 0;
-	numberBeds = 0;
-	isClosed = true;
+	this->id = id;
+	this->numberBeds = numberBeds;
 }
-
 
 const std::fstream& operator>>(std::fstream& stream, Room& room)
 {

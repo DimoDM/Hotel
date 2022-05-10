@@ -5,10 +5,9 @@
 #pragma warning(disable : 4996)
 struct Room
 {
-	Room();
+	Room(size_t id = 0, size_t numberBeds = 0);
 	size_t id;
 	size_t numberBeds;
-	bool isClosed;
 
 };
 
