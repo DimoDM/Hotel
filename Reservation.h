@@ -23,7 +23,7 @@ public:
 	void setBeds(const size_t&);
 	void setName(const char*);
 	void setInterval(const Interval&);
-	bool operator==(const Reservation&);
+	bool operator==(const Reservation&) const;
 	const Reservation& operator=(const Reservation&);
 
 	const char* getName() const;

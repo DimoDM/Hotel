@@ -13,10 +13,11 @@ class Hotel
 	ReservationList resList;
 	std::fstream roomsFile;
 	Date currentDate;
-	bool isRunning = false;
+	bool isRunning;
 
-	bool isValidRoomId(const int&);
+	int isValidRoomId(const int&);
 	Date& enterDate(Date&);
+	Date& enterDate();
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();
@@ -40,12 +41,12 @@ public:
 
 	void regGuest(); // make reservation for room
 	void makeReport(); //make txt file for room's busyness
-	//void showFreeRooms(); // show free rooms for a date
-	//void freeRoom(); // make room free
+	void showFreeRooms(); // show free rooms for a date
+	void freeRoom(); // make room free
 	//void occupiedReport();
 	void searchRoom(const int, const Interval);
 	//void closeRoom();
 
 
-	const bool isRunning();
+	const bool getIsRunning();
 };

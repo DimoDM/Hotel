@@ -13,3 +13,4 @@ struct Room
 };
 
 const std::fstream& operator>>(std::fstream&, Room&);
+std::ostream& operator<<(std::ostream&, const Room&);

@@ -57,7 +57,7 @@ void Reservation::setInterval(const Interval& interval)
 	this->interval = interval;
 }
 
-bool Reservation::operator==(const Reservation& res)
+bool Reservation::operator==(const Reservation& res) const
 {
 	if (id == res.id && interval == res.interval) return true;
 	return false;
