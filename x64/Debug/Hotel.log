@@ -1,4 +1,198 @@
-﻿  Hotel.cpp
+﻿  Date.cpp
+  Hotel.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,41): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,61): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C2143: syntax error: missing ';' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,91): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(22,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(22,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(49,50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(17,13): error C2248: 'Date::year': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(6): message : see declaration of 'Date::year'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(17,26): error C2248: 'Date::mounth': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(7): message : see declaration of 'Date::mounth'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(17,41): error C2248: 'Date::day': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(8): message : see declaration of 'Date::day'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(35,28): error C3861: 'Interval': identifier not found
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(118,2): error C2065: 'Interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(118,11): error C2146: syntax error: missing ';' before identifier 'interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(118,11): error C3861: 'interval': identifier not found
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(125,2): error C2065: 'Interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(125,11): error C2146: syntax error: missing ';' before identifier 'interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(125,11): error C3861: 'interval': identifier not found
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(127,35): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(139,37): error C3861: 'Interval': identifier not found
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(150,2): error C2065: 'Interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(150,11): error C2146: syntax error: missing ';' before identifier 'interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(150,11): error C3861: 'interval': identifier not found
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(154,27): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,62): error C2146: syntax error: missing ')' before identifier 'interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,70): error C3646: 'interval': unknown override specifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,70): error C2059: syntax error: ')'
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(159,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(163,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe
+  Interval.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(5,33): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(5,56): error C2248: 'Date::operator +': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(14): message : see declaration of 'Date::operator +'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(5,73): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(6,28): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(6,60): error C2248: 'Date::operator +': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(14): message : see declaration of 'Date::operator +'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(6,68): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(11,29): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(16,25): error C2248: 'Date::year': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(6): message : see declaration of 'Date::year'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(16,54): error C2248: 'Date::mounth': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(7): message : see declaration of 'Date::mounth'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(16,85): error C2248: 'Date::day': cannot access private member declared in class 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(8): message : see declaration of 'Date::day'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+  main.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,41): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,61): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C2143: syntax error: missing ';' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,91): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(22,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(22,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(49,50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  Reservation.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,41): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,61): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C2143: syntax error: missing ';' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,91): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(18,1): error C2789: 'Reservation::Interval': an object of const-qualified type must be initialized
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31): message : see declaration of 'Reservation::Interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(22,58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(22,58): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(23,1): error C2789: 'Reservation::Interval': an object of const-qualified type must be initialized
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31): message : see declaration of 'Reservation::Interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(26,14): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(29,55): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(29,55): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(30,1): error C2789: 'Reservation::Interval': an object of const-qualified type must be initialized
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31): message : see declaration of 'Reservation::Interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(33,14): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(55,45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(55,45): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(57,8): error C2039: 'interval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(57,19): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(62,22): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(62,38): error C2039: 'interval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(72,3): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(72,18): error C2039: 'interval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(87,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(87,15): error C2143: syntax error: missing ';' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(87,30): error C2039: 'getInterval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(88,1): error C2270: 'getInterval': modifiers not allowed on nonmember functions
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(88,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(88,1): error C2059: syntax error: '{'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(88,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(88,1): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(103,33): error C2039: 'interval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(118,26): error C2039: 'interval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.cpp(125,96): error C2039: 'getInterval': is not a member of 'Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(5): message : see declaration of 'Reservation'
+  ReservationList.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(16,41): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(17,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,61): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(25,33): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,16): error C2143: syntax error: missing ';' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(31,37): error C2238: unexpected token(s) preceding ';'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,91): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(22,44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(22,44): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,43): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(32,22): warning C4267: 'argument': conversion from 'size_t' to 'std::ios_base::seekdir', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(58,65): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(58,65): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(60,24): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(74,64): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(74,64): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(76,24): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(88,70): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(88,70): error C2143: syntax error: missing ',' before '&'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(90,24): error C2065: 'interval': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(98,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Room.cpp
+  Generating Code...

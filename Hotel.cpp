@@ -13,7 +13,7 @@ int Hotel::isValidRoomId(const int& id)
 
 Date& Hotel::enterDate(Date& date)
 {
-	cout << "enter YY/MM/DD with space between them: ";
+	cout << "enter date, in format: \"YYYY MM DD\": ";
 	cin >> date.year >> date.mounth >> date.day;
 	return date;
 }
@@ -86,8 +86,8 @@ void Hotel::update()
 	case 1: regGuest(); break;
 	case 2: showFreeRooms(); break;
 	case 3: freeRoom(); break;
-	case 4: searchRoom(); break;
-	case 5: break;
+	case 4: break;
+	case 5: searchRoom(); break;
 	case 6: break;
 	default: cout << "Invalid input" << endl; break;
 	}

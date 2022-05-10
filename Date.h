@@ -1,7 +1,7 @@
 #pragma once
 #include<ostream>
 
-struct Date
+class Date
 {
 	int year = 2022;
 	int mounth = 5;
@@ -17,16 +17,7 @@ struct Date
 		return date;
 	}
 	bool operator<(const Date date) const {
-		if (year < date.year) return true;
-		else if (year == date.year) {
-			if (mounth < date.mounth) return true;
-			else if (mounth == date.mounth) {
-				if (day < date.day) return true;
-				return false;
-			}
-			return false;
-		}
-		return false;
+		return year <= date.year && mounth <= date.mounth && day < date.day;
 	}
 
 private:
@@ -46,43 +37,3 @@ private:
 	}
 };
 
-struct Interval
-{
-	Date date;
-	int periodInDays = 0;
-
-	Interval(Date date, int period) : date(date), periodInDays(period) {
-
-	}
-	Interval() {
-	}
-
-	bool operator==(const Interval& interval) const {
-		if (date < interval.date) {
-			if ((date + periodInDays) < interval.date) return false;
-			return true;
-		}
-		else if (interval.date < date) {
-			if ((interval.date + periodInDays) < date) return false;
-			return true;
-		}
-		else return true;
-	}
-	bool operator<(const Interval& interval) {
-		if (date.year < interval.date.year) return true;
-		else if (date.year == interval.date.year) {
-			if (date.mounth < interval.date.mounth) return true;
-			else if (date.mounth == interval.date.mounth) {
-				if (date.day < interval.date.day) return true;
-				return false;
-			}
-			return false;
-		}
-		return false;
-	}
-
-	friend std::ostream& operator<<(std::ostream& stream, const Interval& interval) {
-		stream << interval.date.year << " " << interval.date.mounth << " " << interval.date.day << " ,period: " << interval.periodInDays;
-		return stream;
-	}
-};
