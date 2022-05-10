@@ -28,6 +28,7 @@ public:
 	bool isInList(const Reservation& res);
 	void removeFromList(const Room&, const Interval&);
 	void removeFromList(const Reservation& res);
+	void changeStayingPeriod(const Room, const Date);
 	void makeRaport(const Interval&);
 	//void removeFromList(const Room&, const Interval&);
 

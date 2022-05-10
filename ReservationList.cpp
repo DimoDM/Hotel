@@ -116,6 +116,19 @@ void ReservationList::removeFromList(const Reservation& res)
 	}
 }
 
+void ReservationList::changeStayingPeriod(const Room room, const Date date)
+{
+	for (int i = 0; i < data.getSize(); i++) {
+		if (room.id == data[i].getId() && data[i].getInterval() == Interval(date, 0)) {
+			Date newInterval = data[i].getInterval().getDate();
+			size_t newPeriod = date - newInterval;
+			if (newPeriod > 0) data[i].setInterval({ newInterval, date - newInterval });
+			else data.pop_id(i);
+			break;
+		}
+	}
+}
+
 ReservationList::~ReservationList()
 {
 	saveChanges();

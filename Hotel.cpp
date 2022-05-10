@@ -102,7 +102,7 @@ void Hotel::makeReport()
 	interval.init();
 	String fileName("report");
 	(((((fileName += interval.getDate().getYear()) += "-")
-		+= interval.getDate().getMounth()) += "-")
+		+= interval.getDate().getMonth()) += "-")
 		+= interval.getDate().getDay()) += ".txt";
 
 	std::ofstream file(fileName.c_str(), std::ios::out | std::ios::app);
@@ -133,7 +133,8 @@ void Hotel::freeRoom()
 	cin >> id;
 	id = isValidRoomId(id);
 	if (id != 0) {
-		resList.removeFromList(rooms[id], Interval(currentDate, 1));
+		//resList.removeFromList(rooms[id], Interval(currentDate, 1));
+		resList.changeStayingPeriod(rooms[id], currentDate);
 	}
 	else cout << "Invalid id" << endl;
 }

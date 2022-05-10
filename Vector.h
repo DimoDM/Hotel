@@ -22,6 +22,7 @@ public:
 
 	void push_back(const T&);
 	void pop_back();
+	void pop_id(const int);
 
 	~Vector();
 
@@ -108,6 +109,13 @@ template<typename T>
 void Vector<T>::pop_back()
 {
 	size--;
+}
+
+template<typename T>
+void Vector<T>::pop_id(const int id)
+{
+	data[id] = data[size - 1];
+	pop_back();
 }
 
 template<typename T>

@@ -4,10 +4,10 @@
 class Date
 {
 	int year;
-	int mounth;
+	int month;
 	int day;
 
-	int numDaysInMounth[12] = { 31, 28, 31, 30, 31, 30, 31, 30, 30, 31, 30, 31 };
+	int numDaysInMonth[12] = { 31, 28, 31, 30, 31, 30, 31, 30, 30, 31, 30, 31 };
 	void nextDate(const int);
 
 public:
@@ -17,16 +17,18 @@ public:
 	void init();
 
 	void setYear(const int);
-	void setMounth(const int);
+	void setMonth(const int);
 	void setDay(const int);
 
 	const int getYear() const;
-	const int getMounth() const;
+	const int getMonth() const;
 	const int getDay() const;
 
 	const Date& operator+=(const int);
 	const Date operator+(const int) const;
+	const bool operator==(const Date) const;
 	bool operator<(const Date date) const;
+	const size_t operator-(const Date date) const;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Date& interval);
