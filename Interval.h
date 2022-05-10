@@ -10,6 +10,7 @@ public:
 	Interval(Date date, size_t period);
 	Interval() {}
 
+	void init();
 	void setDate(const Date);
 	void setPeriod(const size_t);
 
