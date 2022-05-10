@@ -84,9 +84,9 @@ void Hotel::update()
 	switch (choice) {
 	case 0: isRunning = false; break;
 	case 1: regGuest(); break;
-	case 2: showFreeRooms();  break;
-	case 3: freeRoom();  break;
-	case 4: break;
+	case 2: showFreeRooms(); break;
+	case 3: freeRoom(); break;
+	case 4: searchRoom(); break;
 	case 5: break;
 	case 6: break;
 	default: cout << "Invalid input" << endl; break;
@@ -141,9 +141,30 @@ void Hotel::freeRoom()
 	else cout << "Invalid id" << endl;
 }
 
-void Hotel::searchRoom(const int, const Interval)
+void Hotel::searchRoom()
 {
+	//TODO make this better
+	int period;
+	cout << "Enter period :";
+	cin >> period;
+	Interval interval(enterDate(), period);
+	cout << "Enter min number of beds: ";
+	int beds;
+	cin >> beds;
+	cout << searchRoom(beds, interval) << "is free" << endl;
+}
 
+const Room& Hotel::searchRoom(const int beds, const Interval interval)
+{
+	int currentMinBeds = rooms[0].numberBeds > beds ? rooms[0].numberBeds : beds;
+	int id = 0;
+	for (int i = 0; i < rooms.getSize(); i++) {
+		if (currentMinBeds >= rooms[i].numberBeds && rooms[i].numberBeds >= beds) {
+			currentMinBeds = rooms[i].numberBeds;
+			id = i;
+		}
+	}
+	return rooms[id];
 }
 
 const bool Hotel::getIsRunning()

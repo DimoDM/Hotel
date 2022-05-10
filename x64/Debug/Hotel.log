@@ -1,7 +1,4 @@
-﻿  Reservation.cpp
-  ReservationList.cpp
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(32,22): warning C4267: 'argument': conversion from 'size_t' to 'std::ios_base::seekdir', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(98,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
+﻿  Hotel.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(159,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(163,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe

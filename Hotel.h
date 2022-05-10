@@ -44,7 +44,9 @@ public:
 	void showFreeRooms(); // show free rooms for a date
 	void freeRoom(); // make room free
 	//void occupiedReport();
-	void searchRoom(const int, const Interval);
+
+	void searchRoom();
+	const Room& searchRoom(const int, const Interval);
 	//void closeRoom();
 
 
