@@ -13,6 +13,7 @@ class Hotel
 	ReservationList resList;
 	std::fstream roomsFile;
 	Date currentDate;
+	bool isRunning = false;
 
 	bool isValidRoomId(const int&);
 	Date& enterDate(Date&);
@@ -41,4 +42,7 @@ public:
 	//void occupiedReport();
 	void searchRoom(const int, const Interval);
 	//void closeRoom();
+
+
+	const bool isRunning();
 };

@@ -92,3 +92,8 @@ void Hotel::searchRoom(const int, const Interval)
 {
 
 }
+
+const bool Hotel::isRunning()
+{
+	return isRunning;
+}
