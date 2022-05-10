@@ -25,6 +25,9 @@ class Hotel
 public:
 
 	Hotel();
+
+	void update();
+
 	void getNumOfRooms() {
 		cout << rooms.getSize() << endl;
 		for (int i = 0; i < rooms.getSize(); i++) {

@@ -61,6 +61,31 @@ Hotel::Hotel()
 	rooms.pop_back(); // strange behavior from eof couses last element to be saved twice
 }
 
+void Hotel::update()
+{
+	cout << "Type 1 to register guest.\n"
+		<< "Type 2 to see free rooms for date\n"
+		<< "Type 3 to free room\n"
+		<< "Type 4 to make report\n"
+		<< "Type 5 to search for room\n"
+		<< "Type 6 to close room\n"
+		<< "Type 0 to exit" << endl;
+
+	int choice;
+	cin >> choice;
+
+	switch (choice) {
+	case 0: break;
+	case 1: break;
+	case 2: break;
+	case 3: break;
+	case 4: break;
+	case 5: break;
+	case 6: break;
+	default: break;
+	}
+}
+
 void Hotel::regGuest()
 {
 	cout << "type 0 to register now" << endl << "type 1 to make reservation" << endl;
