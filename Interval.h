@@ -1,12 +1,17 @@
 #pragma once
 #include"Date.h"
-struct Interval
+class Interval
 {
 	Date date;
-	int periodInDays = 0;
+	size_t period = 0;
 
-	Interval(Date date, int period) : date(date), periodInDays(period) {}
+public:
+
+	Interval(Date date, size_t period);
 	Interval() {}
+
+	void setDate(const Date);
+	void setPeriod(const size_t);
 
 	bool operator==(const Interval& interval) const;
 	bool operator<(const Interval& interval) const;

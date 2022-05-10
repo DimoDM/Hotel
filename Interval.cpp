@@ -1,5 +1,10 @@
 #include "Interval.h"
 
+void Interval::setDate(const Date)
+{
+
+}
+
 bool Interval::operator==(const Interval& interval) const
 {
 	return !((date < interval.date && (date + periodInDays) < interval.date)
@@ -13,6 +18,6 @@ bool Interval::operator<(const Interval& interval) const
 
 std::ostream& operator<<(std::ostream& stream, const Interval& interval)
 {
-	stream << interval.date.year << " " << interval.date.mounth << " " << interval.date.day << " ,period: " << interval.periodInDays;
+	stream << interval.date.getYear() << " " << interval.date.getMounth() << " " << interval.date.getDay() << " ,period: " << interval.periodInDays;
 	return stream;
 }

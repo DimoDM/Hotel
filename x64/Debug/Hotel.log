@@ -52,36 +52,10 @@ C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,70): error C2059: syntax e
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(159,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(163,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Interval.cpp
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(5,33): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(5,56): error C2248: 'Date::operator +': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(14): message : see declaration of 'Date::operator +'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(5,73): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(6,28): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(6,60): error C2248: 'Date::operator +': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(14): message : see declaration of 'Date::operator +'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(6,68): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(11,29): error C2248: 'Date::operator <': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(19): message : see declaration of 'Date::operator <'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(16,25): error C2248: 'Date::year': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(6): message : see declaration of 'Date::year'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(16,54): error C2248: 'Date::mounth': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(7): message : see declaration of 'Date::mounth'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(16,85): error C2248: 'Date::day': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(8): message : see declaration of 'Date::day'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(10,44): error C2065: 'periodInDays': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(11,48): error C2065: 'periodInDays': undeclared identifier
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(21,133): error C2039: 'periodInDays': is not a member of 'Interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.h(3): message : see declaration of 'Interval'
   main.cpp
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
