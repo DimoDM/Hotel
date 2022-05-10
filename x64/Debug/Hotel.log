@@ -22,40 +22,21 @@ C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C4430: m
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C2143: syntax error: missing ',' before '&'
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C2143: syntax error: missing ',' before '&'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(49,50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(17,13): error C2248: 'Date::year': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(6): message : see declaration of 'Date::year'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(17,26): error C2248: 'Date::mounth': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(7): message : see declaration of 'Date::mounth'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(17,41): error C2248: 'Date::day': cannot access private member declared in class 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(8): message : see declaration of 'Date::day'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Date.h(4): message : see declaration of 'Date'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(35,28): error C3861: 'Interval': identifier not found
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(118,2): error C2065: 'Interval': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(118,11): error C2146: syntax error: missing ';' before identifier 'interval'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(118,11): error C3861: 'interval': identifier not found
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(125,2): error C2065: 'Interval': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(125,11): error C2146: syntax error: missing ';' before identifier 'interval'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(125,11): error C3861: 'interval': identifier not found
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(127,35): error C2065: 'interval': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(139,37): error C3861: 'Interval': identifier not found
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(150,2): error C2065: 'Interval': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(150,11): error C2146: syntax error: missing ';' before identifier 'interval'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(150,11): error C3861: 'interval': identifier not found
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(154,27): error C2065: 'interval': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,62): error C2146: syntax error: missing ')' before identifier 'interval'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,70): error C3646: 'interval': unknown override specifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,70): error C2059: syntax error: ')'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(159,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(163,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(22,51): error C2664: 'Reservation::Reservation(const Reservation &)': cannot convert argument 3 from 'Interval' to 'const int'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(22,36): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(18,2): message : see declaration of 'Reservation::Reservation'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(112,6): error C2664: 'bool ReservationList::isInList(const Reservation &)': cannot convert argument 2 from 'Interval' to 'const int'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(112,35): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(24,7): message : see declaration of 'ReservationList::isInList'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(124,61): error C2664: 'void ReservationList::removeFromList(const Reservation &)': cannot convert argument 2 from 'Interval' to 'const int'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(124,45): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,7): message : see declaration of 'ReservationList::removeFromList'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(141,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(145,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Interval.cpp
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(10,44): error C2065: 'periodInDays': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(11,48): error C2065: 'periodInDays': undeclared identifier
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(21,133): error C2039: 'periodInDays': is not a member of 'Interval'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.h(3): message : see declaration of 'Interval'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(42,15): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(47,50): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Interval.cpp(48,54): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
   main.cpp
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -79,7 +60,6 @@ C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C4430: m
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(26,49): error C2143: syntax error: missing ',' before '&'
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.h(28,32): error C2143: syntax error: missing ',' before '&'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(49,50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Reservation.cpp
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C3646: 'interval': unknown override specifier
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Reservation.h(7,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -169,4 +149,14 @@ C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(88,70): error C2143:
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(90,24): error C2065: 'interval': undeclared identifier
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\ReservationList.cpp(98,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Room.cpp
+  String.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(11,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(31,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(47,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(58,1): error C2084: function 'String::String(const char *)' already has a body
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(19): message : see previous definition of '{ctor}'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(61,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(92,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(93,2): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\String.cpp(132,2): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Generating Code...

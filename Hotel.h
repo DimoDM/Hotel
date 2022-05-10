@@ -1,6 +1,7 @@
 #pragma once
 #include"Room.h"
 #include"ReservationList.h"
+#include"Interval.h"
 #include<fstream>
 #include<iostream>
 #include<string.h>
@@ -16,8 +17,6 @@ class Hotel
 	bool isRunning;
 
 	int isValidRoomId(const int&);
-	Date& enterDate(Date&);
-	Date& enterDate();
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();

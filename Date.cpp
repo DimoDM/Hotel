@@ -97,3 +97,9 @@ bool Date::operator<(const Date date) const
 {
 	return year <= date.year && mounth <= date.mounth && day < date.day;
 }
+
+std::ostream& operator<<(std::ostream& stream, const Date& date)
+{
+	stream << "Date: " << date.getYear() << "/" << date.getMounth() << "/" << date.getDay();
+	return stream;
+}

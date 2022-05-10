@@ -27,6 +27,7 @@ public:
 	const Date& operator+=(const int);
 	const Date operator+(const int) const;
 	bool operator<(const Date date) const;
-
 };
+
+std::ostream& operator<<(std::ostream& stream, const Date& interval);
 

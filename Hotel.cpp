@@ -11,19 +11,6 @@ int Hotel::isValidRoomId(const int& id)
 	return 0;
 }
 
-Date& Hotel::enterDate(Date& date)
-{
-	cout << "enter date, in format: \"YYYY MM DD\": ";
-	cin >> date.year >> date.mounth >> date.day;
-	return date;
-}
-
-Date& Hotel::enterDate()
-{
-	Date date;
-	return enterDate(date);
-}
-
 void Hotel::makeRegistration(const char* name, const Date& date)
 {
 	cout << "Enter period of staying in days: ";
@@ -47,7 +34,7 @@ void Hotel::makeReservation()
 	cout << "Enter name for reservation: ";
 	cin >> name;
 	Date date;
-	enterDate(date);
+	date.init();
 	makeRegistration(name, date);
 }
 
@@ -110,19 +97,17 @@ void Hotel::regGuest()
 
 void Hotel::makeReport()
 {
-	Date date;
-	enterDate(date);
-	cout << "Enter period of staying in days: ";
-	int period;
-	cin >> period;
-	Interval interval(date, period);
-	std::ofstream f("report.txt", std::ios::out | std::ios::app);
+	Interval interval;
+	interval.init();
+	//std::ofstream f("report.txt", std::ios::out | std::ios::app);
 	
 }
 
 void Hotel::showFreeRooms()
 {
-	Interval interval(enterDate(), 1);
+	Date date;
+	date.init();
+	Interval interval(date, 1);
 	for (int i = 0; i < rooms.getSize(); i++)
 		if (!resList.isInList(rooms[i], interval))
 			cout << rooms[i] << " is free for today" << endl;
@@ -143,11 +128,8 @@ void Hotel::freeRoom()
 
 void Hotel::searchRoom()
 {
-	//TODO make this better
-	int period;
-	cout << "Enter period :";
-	cin >> period;
-	Interval interval(enterDate(), period);
+	Interval interval;
+	interval.init();
 	cout << "Enter min number of beds: ";
 	int beds;
 	cin >> beds;

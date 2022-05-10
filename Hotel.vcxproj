@@ -146,6 +146,7 @@
     <ClCompile Include="Reservation.cpp" />
     <ClCompile Include="ReservationList.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Reservation.h" />
     <ClInclude Include="ReservationList.h" />
     <ClInclude Include="Room.h" />
+    <ClInclude Include="String.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>

@@ -14,6 +14,7 @@ void Interval::init()
 	setDate(date);
 	int period;
 	std::cout << "enter period of staying: ";
+	std::cin >> period;
 	setPeriod(period);
 }
 
@@ -31,6 +32,16 @@ void Interval::setPeriod(const size_t period)
 	}
 }
 
+const Date Interval::getDate() const
+{
+	return date;
+}
+
+const int Interval::getPeriod() const
+{
+	return period;
+}
+
 bool Interval::operator==(const Interval& interval) const
 {
 	return !((date < interval.date && (date + period) < interval.date)
@@ -44,6 +55,6 @@ bool Interval::operator<(const Interval& interval) const
 
 std::ostream& operator<<(std::ostream& stream, const Interval& interval)
 {
-	stream << interval.date.getYear() << " " << interval.date.getMounth() << " " << interval.date.getDay() << " ,period: " << interval.period;
+	stream << interval.getDate() << " ,period: " << interval.getPeriod();
 	return stream;
 }
