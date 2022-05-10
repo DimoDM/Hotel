@@ -1,59 +1,59 @@
-#include"Reservation.h"
+#include"ReservedRoom.h"
 #include<iostream>
 
-Reservation::Reservation() : Room()
+ReservedRoom::ReservedRoom() : Room()
 {
 	name = "unknown";
 }
 
-Reservation::Reservation(const Room& room, const Interval& interval) : Room()
+ReservedRoom::ReservedRoom(const Room& room, const Interval& interval) : Room()
 {
 	name = "unknown";
 	setId(room.id);
 	setInterval(interval);
 }
 
-Reservation::Reservation(const int& id, const Interval& interval)
+ReservedRoom::ReservedRoom(const int& id, const Interval& interval)
 {
 	name = "unknown";
 	setId(id);
 	setInterval(interval);
 }
 
-Reservation::Reservation(const char* name, const int& id, const Interval& interval)
+ReservedRoom::ReservedRoom(const char* name, const int& id, const Interval& interval)
 {
 	this->name = name;
 	setId(id);
 	setInterval(interval);
 }
 
-void Reservation::setId(const size_t& id)
+void ReservedRoom::setId(const size_t& id)
 {
 	this->id = id;
 }
 
-void Reservation::setBeds(const size_t& beds)
+void ReservedRoom::setBeds(const size_t& beds)
 {
 	numberBeds = beds;
 }
 
-void Reservation::setName(const char* name)
+void ReservedRoom::setName(const char* name)
 {
 	this->name = name;
 }
 
-void Reservation::setInterval(const Interval& interval)
+void ReservedRoom::setInterval(const Interval& interval)
 {
 	this->interval = interval;
 }
 
-bool Reservation::operator==(const Reservation& res) const
+bool ReservedRoom::operator==(const ReservedRoom& res) const
 {
 	if (id == res.id && interval == res.interval) return true;
 	return false;
 }
 
-const Reservation& Reservation::operator=(const Reservation& res)
+const ReservedRoom& ReservedRoom::operator=(const ReservedRoom& res)
 {
 	if (this != &res) {
 		name = res.name;
@@ -63,22 +63,22 @@ const Reservation& Reservation::operator=(const Reservation& res)
 	return *this;
 }
 
-const String Reservation::getName() const
+const String ReservedRoom::getName() const
 {
 	return name;
 }
 
-const size_t& Reservation::getId() const 
+const size_t& ReservedRoom::getId() const 
 {
 	return id;
 }
 
-const Interval& Reservation::getInterval() const
+const Interval& ReservedRoom::getInterval() const
 {
 	return interval;
 }
 
-std::fstream& operator<<(std::fstream& stream, const Reservation& res)
+std::fstream& operator<<(std::fstream& stream, const ReservedRoom& res)
 {
 	size_t size = strlen(res.name.c_str());
 	stream.write((const char*)&res.id, sizeof(size_t));
@@ -88,7 +88,7 @@ std::fstream& operator<<(std::fstream& stream, const Reservation& res)
 	return stream;
 }
 
-std::fstream& operator>>(std::fstream& stream, Reservation& res)
+std::fstream& operator>>(std::fstream& stream, ReservedRoom& res)
 {
 	size_t val;
 	stream.read((char*)&res.id, sizeof(size_t));
@@ -103,13 +103,13 @@ std::fstream& operator>>(std::fstream& stream, Reservation& res)
 }
 
 
-std::ostream& operator<<(std::ostream& stream, const Reservation& res)
+std::ostream& operator<<(std::ostream& stream, const ReservedRoom& res)
 {
 	stream << "client: " << res.getName() << " ,id of room: " << res.getId() << " ,Date: " << res.getInterval() << '\n';
 	return stream;
 }
 
-const std::istream& operator>>(const std::istream& stream, Reservation& res)
+const std::istream& operator>>(const std::istream& stream, ReservedRoom& res)
 {
 	return stream;
 }
