@@ -57,9 +57,6 @@ struct Interval
 	Interval() {
 	}
 
-	
-
-
 	bool operator==(const Interval& interval) const {
 		if (date < interval.date) {
 			if ((date + periodInDays) < interval.date) return false;

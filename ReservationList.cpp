@@ -87,6 +87,7 @@ bool ReservationList::isInList(const Reservation& res)
 
 ReservationList::~ReservationList()
 {
+	saveChanges();
 	file.close();
 }
 

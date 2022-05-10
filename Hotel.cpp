@@ -11,6 +11,13 @@ bool Hotel::isValidRoomId(const int& id)
 	return false;
 }
 
+Date& Hotel::enterDate(Date& date)
+{
+	cout << "enter YY/MM/DD with space between them: ";
+	cin >> date.year >> date.mounth >> date.day;
+	return date;
+}
+
 void Hotel::makeRegistration(const char* name, const Date& date)
 {
 	cout << "Enter period of staying in days: ";
@@ -33,9 +40,8 @@ void Hotel::makeReservation()
 	char name[1024];
 	cout << "Enter name for reservation: ";
 	cin >> name;
-	cout << "enter YY/MM/DD with space between them: ";
 	Date date;
-	cin >> date.year >> date.mounth >> date.day;
+	enterDate(date);
 	makeRegistration(name, date);
 }
 
@@ -68,6 +74,18 @@ void Hotel::regGuest()
 		makeRegistration();
 		resList.printList();
 	}
+}
+
+void Hotel::makeReport()
+{
+	Date date;
+	enterDate(date);
+	cout << "Enter period of staying in days: ";
+	int period;
+	cin >> period;
+	Interval interval(date, period);
+	std::ofstream f("report.txt", std::ios::out | std::ios::app);
+	
 }
 
 void Hotel::searchRoom(const int, const Interval)

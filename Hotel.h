@@ -15,6 +15,7 @@ class Hotel
 	Date currentDate;
 
 	bool isValidRoomId(const int&);
+	Date& enterDate(Date&);
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();
@@ -34,6 +35,7 @@ public:
 	//Hotel(const char*);
 
 	void regGuest(); // make reservation for room
+	void makeReport(); //make txt file for room's busyness
 	//void showFreeRooms(); // show free rooms for a date
 	//void freeRoom(); // make room free
 	//void occupiedReport();
