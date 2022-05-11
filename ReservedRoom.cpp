@@ -78,28 +78,28 @@ const Interval& ReservedRoom::getInterval() const
 	return interval;
 }
 
-std::fstream& operator<<(std::fstream& stream, const ReservedRoom& res)
+std::ofstream& operator<<(std::ofstream& stream, const ReservedRoom& res)
 {
-	size_t size = strlen(res.name.c_str());
-	stream.write((const char*)&res.id, sizeof(size_t));
+	size_t size = strlen(res.getName().c_str());
+	stream.write((const char*)&res.getId(), sizeof(size_t));
 	stream.write((const char*)&size, sizeof(size_t));
-	stream.write((const char*)res.name.c_str(), size);
-	stream.write((const char*)&res.interval, sizeof(Interval));
+	stream.write((const char*)res.getName().c_str(), size);
+	stream.write((const char*)&res.getInterval(), sizeof(Interval));
 	return stream;
 }
 
-std::fstream& operator>>(std::fstream& stream, ReservedRoom& res)
+std::ifstream& operator>>(std::ifstream& stream, ReservedRoom& res)
 {
 	size_t val;
-	stream.read((char*)&res.id, sizeof(size_t));
+	stream.read((char*)&res.getId(), sizeof(size_t));
 	stream.read((char*)&val, sizeof(size_t));
 
 	char buff[1024];
 	stream.read(buff, val);
 	buff[val] = '\0';
-	res.name = buff;
+	res.setName(buff);
 
-	stream.read((char*)&res.interval, sizeof(Interval));
+	stream.read((char*)&res.getInterval(), sizeof(Interval));
 	return stream;
 }
 

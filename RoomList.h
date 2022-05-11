@@ -7,6 +7,7 @@
 #include<ostream>
 #include<istream>
 #include<iostream>
+#include"FileManager.h"
 using namespace std;
 
 template <typename T>
@@ -17,15 +18,16 @@ class RoomList
 	static_assert(std::is_base_of<Room, T>::value, "Derived not derived from BaseClass");
 
 	Vector<T> data;
-	std::fstream file;
+	//std::fstream file;
+	String fileName;
 
 	void saveChanges();
 	void loadList();
-	 size_t getFileSize() ;
+	 size_t getFileSize(std::ifstream&);
 
 public:
-
-	RoomList();
+	RoomList() { fileName = "resList.dat"; }
+	RoomList(const char*);
 	const size_t getDataSize() const;
 	Vector<T>& getData();
 	void printList();
@@ -44,32 +46,31 @@ public:
 template<typename T>
 void RoomList<T>::saveChanges()
 {
-	file.seekp(0, std::ios::beg);
+	std::ofstream file;
+	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::trunc);
 	for (int i = 0; i < data.getSize(); i++) {
 		file << data[i];
 	}
+	file.close();
 }
 
 template<typename T>
 void RoomList<T>::loadList()
 {
 	T t;
-	size_t val = getFileSize();
-	file.seekg(0, std::ios::beg);
+	std::ifstream file;
+	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::ate);
+	file.seekg(std::ios::beg);
+	size_t val = getFileSize(file);
 	while (file.tellg() < val) {
 		file >> t;
 		data.push_back(t);
 	}
 	file.close();
-	file.open("resList.dat", ios::binary | ios::in | ios::out | ios::ate | ios::trunc);
-	if (!file.is_open()) {
-		perror("binary file error");
-		exit(1);
-	}
 }
 
 template<typename T>
-size_t RoomList<T>::getFileSize()
+size_t RoomList<T>::getFileSize(std::ifstream& file)
 {
 	size_t curPos = file.tellg();
 	file.seekg(0, ios::end);
@@ -79,19 +80,10 @@ size_t RoomList<T>::getFileSize()
 }
 
 template<typename T>
-RoomList<T>::RoomList()
+RoomList<T>::RoomList(const char* fileName)
 {
-	fstream f("resList.dat", ios::binary | ios::app);
-	f.close();
-	file.open("resList.dat", ios::binary | ios::in | ios::out | ios::ate);
-	file.seekg(0, ios::beg);
-	if (!file.is_open()) {
-		perror("binary file error");
-		exit(1);
-	}
-	if (getFileSize() > 0) {
-		loadList();
-	}
+	this->fileName = fileName;
+	loadList();
 }
 
 template<typename T>

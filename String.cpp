@@ -16,6 +16,12 @@ void String::free()
 	delete[] str;
 }
 
+String::String()
+{
+	size = 0;
+	str = nullptr;
+}
+
 String::String(const char* data)
 {
 	if (data == nullptr)

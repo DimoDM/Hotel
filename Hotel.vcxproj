@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="ClosedRoom.cpp" />
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Hotel.cpp" />
     <ClCompile Include="Interval.cpp" />
     <ClCompile Include="main.cpp" />
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="ClosedRoom.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="Hotel.h" />
     <ClInclude Include="Interval.h" />
     <ClInclude Include="ReservedRoom.h" />
@@ -158,9 +160,6 @@
     <ClInclude Include="Room.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Vector.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resList.dat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

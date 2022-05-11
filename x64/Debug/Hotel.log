@@ -1,2 +1,8 @@
-﻿  ClosedRoom.cpp
+﻿  Hotel.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(155,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(159,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  ReservedRoom.cpp
+  Generating Code...
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe

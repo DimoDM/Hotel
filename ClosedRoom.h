@@ -3,7 +3,7 @@
 #include"Room.h"
 #include"Interval.h"
 
-class ClosedRoom : public Room
+class ClosedRoom : private Room
 {
 	Interval interval;
 

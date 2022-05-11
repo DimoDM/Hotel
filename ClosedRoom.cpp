@@ -13,9 +13,9 @@ void ClosedRoom::setInterval(const Interval& interval)
 	this->interval = interval;
 }
 
-bool ClosedRoom::operator==(const ClosedRoom& res) const
+bool ClosedRoom::operator==(const ClosedRoom& room) const
 {
-	if (id == res.id && interval == res.interval) return true;
+	if (id == room.id && interval == room.interval) return true;
 	return false;
 }
 
@@ -29,28 +29,18 @@ const Interval& ClosedRoom::getInterval() const
 	return interval;
 }
 
-std::fstream& operator<<(std::fstream& stream, const ClosedRoom& res)
+std::fstream& operator<<(std::fstream& stream, const ClosedRoom& room)
 {
-	//size_t size = strlen(res.name.c_str());
-	stream.write((const char*)&res.id, sizeof(size_t));
-	//stream.write((const char*)&size, sizeof(size_t));
-	//stream.write((const char*)res.name.c_str(), size);
-	stream.write((const char*)&res.interval, sizeof(Interval));
+	stream.write((const char*)&room.id, sizeof(size_t));
+	stream.write((const char*)&room.interval, sizeof(Interval));
 	return stream;
 }
 
-std::fstream& operator>>(std::fstream& stream, ClosedRoom& res)
+std::fstream& operator>>(std::fstream& stream, ClosedRoom& room)
 {
 	size_t val;
-	stream.read((char*)&res.id, sizeof(size_t));
-	stream.read((char*)&val, sizeof(size_t));
-
-	char buff[1024];
-	stream.read(buff, val);
-	buff[val] = '\0';
-	//res.name = buff;
-
-	stream.read((char*)&res.interval, sizeof(Interval));
+	stream.read((char*)&room.id, sizeof(size_t));
+	stream.read((char*)&room.interval, sizeof(Interval));
 	return stream;
 }
 

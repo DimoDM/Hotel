@@ -105,7 +105,7 @@ void Hotel::makeReport()
 		+= interval.getDate().getMonth()) += "-")
 		+= interval.getDate().getDay()) += ".txt";
 
-	std::ofstream file(fileName.c_str(), std::ios::out | std::ios::app);
+	std::fstream file(fileName.c_str(), std::ios::out | std::ios::app);
 	for (int i = 0; i < resList.getDataSize(); i++) {
 		//TODO
 		//fix == operation cuz I think don't work
