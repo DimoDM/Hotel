@@ -1,75 +1,35 @@
 #pragma once
+#include<ostream>
 
-struct Date
+class Date
 {
-	int year = 2022;
-	int mounth = 5;
-	int day = 1;
+	int year;
+	int month;
+	int day;
 
-	const Date& operator+=(const int period) {
-		nextDate(period);
-		return *this;
-	}
-	const Date operator+(const int period) const {
-		Date date = *this;
-		date += period;
-		return date;
-	}
-	bool operator<(const Date date) const {
-		if (year < date.year) return true;
-		else if (year == date.year) {
-			if (mounth < date.mounth) return true;
-			else if (mounth == date.mounth) {
-				if (day < date.day) return true;
-				return false;
-			}
-			return false;
-		}
-		return false;
-	}
+	int numDaysInMonth[12] = { 31, 28, 31, 30, 31, 30, 31, 30, 30, 31, 30, 31 };
+	void nextDate(const int);
 
-private:
-	int numDaysInMounth[12] = { 31, 28, 31, 30, 31, 30, 31, 30, 30, 31, 30, 31 };
-	void nextDate(const int period) {
-		if (year % 4 == 0) numDaysInMounth[1] = 29;
-		else numDaysInMounth[1] = 28;
-		if (day + period > numDaysInMounth[mounth]) {
-			int residue = period - (numDaysInMounth[mounth] - day);
-			if (++mounth > 12) {
-				mounth = 1;
-				year++;
-			}
-			nextDate(residue);
-		}
-		else day += period;
-	}
+public:
+
+	Date(int year = 2022, int mounth = 5, int day = 1);
+
+	void init();
+
+	void setYear(const int);
+	void setMonth(const int);
+	void setDay(const int);
+
+	const int getYear() const;
+	const int getMonth() const;
+	const int getDay() const;
+
+	const Date& operator+=(const int);
+	const Date operator+(const int) const;
+	const bool operator==(const Date) const;
+	bool operator<(const Date date) const;
+	const size_t operator-(const Date date) const;
 };
 
-struct Interval
-{
-	Date date;
-	int periodInDays = 0;
+std::ostream& operator<<(std::ostream& stream, const Date& interval);
 
-	bool operator==(const Interval& interval) {
-		if (date < interval.date) {
-			if ((date + periodInDays) < interval.date) return false;
-			return true;
-		}
-		else if (interval.date < date) {
-			if ((interval.date + periodInDays) < date) return false;
-			return true;
-		}
-	}
-	bool operator<(const Interval& interval) {
-		if (date.year < interval.date.year) return true;
-		else if (date.year == interval.date.year) {
-			if (date.mounth < interval.date.mounth) return true;
-			else if (date.mounth == interval.date.mounth) {
-				if (date.day < interval.date.day) return true;
-				return false;
-			}
-			return false;
-		}
-		return false;
-	}
-};

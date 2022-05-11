@@ -18,10 +18,11 @@ public:
 	Vector(const Vector&);
 	const T& operator=(const Vector&);
 	T& operator[](int);
-	size_t getSize();
+	const size_t getSize() const;
 
 	void push_back(const T&);
 	void pop_back();
+	void pop_id(const int);
 
 	~Vector();
 
@@ -49,7 +50,7 @@ template<typename T>
 void Vector<T>::resize()
 {
 	size++;
-	if (size >= capacity) {
+	if (size == capacity) {
 		T* newData = new T[capacity * 2];
 		for (int i = 0; i < size; i++) {
 			newData[i] = data[i];
@@ -92,7 +93,7 @@ T& Vector<T>::operator[](int index)
 }
 
 template<typename T>
-size_t Vector<T>::getSize()
+const size_t Vector<T>::getSize() const
 {
 	return size;
 }
@@ -108,6 +109,13 @@ template<typename T>
 void Vector<T>::pop_back()
 {
 	size--;
+}
+
+template<typename T>
+void Vector<T>::pop_id(const int id)
+{
+	data[id] = data[size - 1];
+	pop_back();
 }
 
 template<typename T>
