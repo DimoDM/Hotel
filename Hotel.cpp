@@ -17,11 +17,15 @@ void Hotel::makeRegistration(const char* name, const Date& date)
 	int period;
 	cin >> period;
 	cout << "Enter number of the room: ";
-	int id;
+	size_t id;
 	cin >> id;
-	Reservation res(name, id, Interval(date, period));
+	Interval interval(date, period);
+	ReservedRoom res(name, id, interval);
 	cout <<(bool) isValidRoomId(id) << endl;
-	if (isValidRoomId(id)) resList.addToList(res);
+	if (isValidRoomId(id)) {
+		if (!clList.isInList({ id, interval })) resList.addToList(res);
+		else cout << "There is no registered guest in the room, but no one can be accommodated in it.\n";
+	}
 	else cout << "There is no such room" << endl;
 }
 void Hotel::makeRegistration()
@@ -41,6 +45,8 @@ void Hotel::makeReservation()
 
 Hotel::Hotel()
 {
+	//resList.setFileName("newResList");
+	clList.setFileName("closedRooms.dat");
 	roomsFile.open("Rooms.csv");
 	if (!roomsFile.is_open()) {
 		perror("Can't open file");
@@ -76,7 +82,7 @@ void Hotel::update()
 	case 3: freeRoom(); break;
 	case 4: makeReport(); break;
 	case 5: searchRoom(); break;
-	case 6: break;
+	case 6: closeRoom(); break;
 	default: cout << "Invalid input" << endl; break;
 	}
 }
@@ -105,7 +111,7 @@ void Hotel::makeReport()
 		+= interval.getDate().getMonth()) += "-")
 		+= interval.getDate().getDay()) += ".txt";
 
-	std::ofstream file(fileName.c_str(), std::ios::out | std::ios::app);
+	std::fstream file(fileName.c_str(), std::ios::out | std::ios::app);
 	for (int i = 0; i < resList.getDataSize(); i++) {
 		//TODO
 		//fix == operation cuz I think don't work
@@ -121,7 +127,7 @@ void Hotel::showFreeRooms()
 	date.init();
 	Interval interval(date, 1);
 	for (int i = 0; i < rooms.getSize(); i++)
-		if (!resList.isInList(rooms[i], interval))
+		if (!resList.isInList({ rooms[i], interval }))
 			cout << rooms[i] << " is free for today" << endl;
 
 }
@@ -161,6 +167,24 @@ const Room& Hotel::searchRoom(const int beds, const Interval interval)
 		}
 	}
 	return rooms[id];
+}
+
+void Hotel::closeRoom()
+{
+	size_t id;
+	cout << "Enter number of the room: ";
+	cin >> id;
+	Interval interval;
+	interval.init();
+	ClosedRoom room(id, interval);
+	cout << (bool)isValidRoomId(id) << endl;
+	if (isValidRoomId(id)) {
+		if (resList.isInList({ id, interval }))
+			resList.changeStayingPeriod(id, interval.getDate());
+		clList.addToList(room);
+	}
+	else cout << "There is no such room" << endl;
+
 }
 
 const bool Hotel::getIsRunning()
