@@ -24,7 +24,6 @@ class RoomList
 	void saveChanges();
 	void loadList();
 	void freeData();
-	 size_t getFileSize(std::ifstream&);
 
 public:
 	RoomList();
@@ -63,7 +62,7 @@ void RoomList<T>::loadList()
 	std::ifstream file;
 	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::app);
 	file.seekg(0, std::ios::beg);
-	size_t val = getFileSize(file);
+	size_t val = FileManager::getFileSize(file);
 	while (file.tellg() < val) {
 		file >> t;
 		data.push_back(t);
@@ -77,16 +76,6 @@ template<typename T>
 void RoomList<T>::freeData()
 {
 	while (data.getSize() != 0) data.pop_back();
-}
-
-template<typename T>
-size_t RoomList<T>::getFileSize(std::ifstream& file)
-{
-	size_t curPos = file.tellg();
-	file.seekg(0, ios::end);
-	size_t result = file.tellg();
-	file.seekg(0, curPos);
-	return result;
 }
 
 template<typename T>

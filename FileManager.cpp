@@ -37,3 +37,13 @@ void FileManager::openFile(std::ifstream&file, const char* fileName)
 {
 	openFile(file, fileName, std::ios::in);
 }
+
+size_t FileManager::getFileSize(std::ifstream& file)
+{
+	if (!file.is_open()) return 0;
+	size_t curPos = file.tellg();
+	file.seekg(0, std::ios::end);
+	size_t result = file.tellg();
+	file.seekg(0, curPos);
+	return result;
+}

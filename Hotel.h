@@ -14,19 +14,24 @@ class Hotel
 	Vector<Room> rooms;
 	RoomList<ReservedRoom> resList;
 	RoomList<ClosedRoom> clList;
-	std::fstream roomsFile;
+
+	//std::fstream roomsFile;
+	String fileName;
 	Date currentDate;
 	bool isRunning;
 
+	void loadValidRooms(ifstream&);
 	int isValidRoomId(const int&);
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();
+	void init();
 
 
 public:
 
 	Hotel();
+	Hotel(const char*);
 
 	void update();
 
@@ -44,8 +49,6 @@ public:
 	void makeReport(); //make txt file for room's busyness
 	void showFreeRooms(); // show free rooms for a date
 	void freeRoom(); // make room free
-	//void occupiedReport();
-
 	void searchRoom();
 	const Room& searchRoom(const int, const Interval);
 	void closeRoom();

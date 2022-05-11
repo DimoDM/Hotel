@@ -1,7 +1,16 @@
 #include "Hotel.h"
 using namespace std;
 
-
+void Hotel::loadValidRooms(ifstream& file)
+{
+	file.seekg(7, ios::beg);
+	Room tempRoom;
+	while (!file.eof()) {
+		file >> tempRoom;
+		rooms.push_back(tempRoom);
+	}
+	rooms.pop_back(); // strange behavior from eof couses last element to be saved twice
+}
 
 int Hotel::isValidRoomId(const int& id)
 {
@@ -46,20 +55,24 @@ void Hotel::makeReservation()
 Hotel::Hotel()
 {
 	//resList.setFileName("newResList");
+	fileName = "Rooms.csv";
+	init();
+}
+
+Hotel::Hotel(const char* fileName)
+{
+	this->fileName = fileName;
+	init();
+}
+
+void Hotel::init()
+{
 	clList.setFileName("closedRooms.dat");
-	roomsFile.open("Rooms.csv");
-	if (!roomsFile.is_open()) {
-		perror("Can't open file");
-		return;
-	}
-	roomsFile.seekg(7, ios::beg);
-	Room tempRoom;
-	while (!roomsFile.eof()) {
-		roomsFile >> tempRoom;
-		rooms.push_back(tempRoom);
-	}
-	rooms.pop_back(); // strange behavior from eof couses last element to be saved twice
+	std::ifstream file;
+	FileManager::openFile(file, fileName.c_str());
+	loadValidRooms(file);
 	isRunning = true;
+	file.close();
 }
 
 void Hotel::update()

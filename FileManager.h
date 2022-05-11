@@ -13,4 +13,5 @@ public:
 
 	static void openFile(std::ofstream&, const char*);
 	static void openFile(std::ifstream&, const char*);
+	static size_t getFileSize(std::ifstream&);
 };

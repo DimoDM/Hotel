@@ -152,8 +152,10 @@
   <ItemGroup>
     <ClInclude Include="ClosedRoom.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="doctest.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Hotel.h" />
+    <ClInclude Include="HotelController.h" />
     <ClInclude Include="Interval.h" />
     <ClInclude Include="ReservedRoom.h" />
     <ClInclude Include="RoomList.h" />
@@ -165,6 +167,7 @@
     <None Include="closedRooms.dat" />
     <None Include="newResList" />
     <None Include="resList.dat" />
+    <None Include="Rooms.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
