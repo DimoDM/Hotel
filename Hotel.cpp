@@ -17,11 +17,15 @@ void Hotel::makeRegistration(const char* name, const Date& date)
 	int period;
 	cin >> period;
 	cout << "Enter number of the room: ";
-	int id;
+	size_t id;
 	cin >> id;
-	ReservedRoom res(name, id, Interval(date, period));
+	Interval interval(date, period);
+	ReservedRoom res(name, id, interval);
 	cout <<(bool) isValidRoomId(id) << endl;
-	if (isValidRoomId(id)) resList.addToList(res);
+	if (isValidRoomId(id)) {
+		if (!clList.isInList({ id, interval })) resList.addToList(res);
+		else cout << "There is no registered guest in the room, but no one can be accommodated in it.\n";
+	}
 	else cout << "There is no such room" << endl;
 }
 void Hotel::makeRegistration()
@@ -174,7 +178,11 @@ void Hotel::closeRoom()
 	interval.init();
 	ClosedRoom room(id, interval);
 	cout << (bool)isValidRoomId(id) << endl;
-	if (isValidRoomId(id)) clList.addToList(room);
+	if (isValidRoomId(id)) {
+		if (resList.isInList({ id, interval }))
+			resList.changeStayingPeriod(id, interval.getDate());
+		clList.addToList(room);
+	}
 	else cout << "There is no such room" << endl;
 
 }

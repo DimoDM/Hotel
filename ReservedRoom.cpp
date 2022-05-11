@@ -13,14 +13,14 @@ ReservedRoom::ReservedRoom(const Room& room, const Interval& interval) : Room()
 	setInterval(interval);
 }
 
-ReservedRoom::ReservedRoom(const int id, const Interval& interval)
+ReservedRoom::ReservedRoom(const size_t id, const Interval& interval)
 {
 	name = "unknown";
 	setId(id);
 	setInterval(interval);
 }
 
-ReservedRoom::ReservedRoom(const char* name, const int id, const Interval& interval)
+ReservedRoom::ReservedRoom(const char* name, const size_t id, const Interval& interval)
 {
 	this->name = name;
 	setId(id);

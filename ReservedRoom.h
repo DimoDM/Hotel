@@ -13,8 +13,8 @@ public:
 
 	ReservedRoom();
 	ReservedRoom(const Room& room, const Interval&);
-	ReservedRoom(const int id, const Interval& interval);
-	ReservedRoom(const char* name, const int id, const Interval& interval);
+	ReservedRoom(const size_t id, const Interval& interval);
+	ReservedRoom(const char* name, const size_t id, const Interval& interval);
 
 	void init();
 	void setId(const size_t&);
