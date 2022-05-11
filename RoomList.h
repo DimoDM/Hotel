@@ -26,7 +26,7 @@ class RoomList
 	 size_t getFileSize(std::ifstream&);
 
 public:
-	RoomList() { fileName = "resList.dat"; }
+	RoomList();
 	RoomList(const char*);
 	const size_t getDataSize() const;
 	Vector<T>& getData();
@@ -59,14 +59,16 @@ void RoomList<T>::loadList()
 {
 	T t;
 	std::ifstream file;
-	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::ate);
-	file.seekg(std::ios::beg);
+	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::app);
+	file.seekg(0, std::ios::beg);
 	size_t val = getFileSize(file);
 	while (file.tellg() < val) {
 		file >> t;
 		data.push_back(t);
+		cout << "push";
 	}
 	file.close();
+	cout << "close" << endl;
 }
 
 template<typename T>
@@ -77,6 +79,13 @@ size_t RoomList<T>::getFileSize(std::ifstream& file)
 	size_t result = file.tellg();
 	file.seekg(0, curPos);
 	return result;
+}
+
+template<typename T>
+RoomList<T>::RoomList()
+{
+	this->fileName = "resList.dat";
+	loadList();
 }
 
 template<typename T>

@@ -27,11 +27,9 @@ public:
 	const size_t& getId() const;
 	const Interval& getInterval() const;
 
-	friend std::ostream& operator<<(std::ostream&, const ReservedRoom&);
-	friend std::istream& operator>>(std::istream&, ReservedRoom&);
-
-
+	friend std::ifstream& operator>>(std::ifstream&, ReservedRoom&);
 };
-
+std::ostream& operator<<(std::ostream&, const ReservedRoom&);
+const std::istream& operator>>(const std::istream&, ReservedRoom&);
 std::ofstream& operator<<(std::ofstream&, const ReservedRoom&);
-std::ifstream& operator>>(std::ifstream&, ReservedRoom&);
+

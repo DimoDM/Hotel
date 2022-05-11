@@ -91,7 +91,7 @@ std::ofstream& operator<<(std::ofstream& stream, const ReservedRoom& res)
 std::ifstream& operator>>(std::ifstream& stream, ReservedRoom& res)
 {
 	size_t val;
-	stream.read((char*)&res.getId(), sizeof(size_t));
+	stream.read((char*)&res.id, sizeof(size_t));
 	stream.read((char*)&val, sizeof(size_t));
 
 	char buff[1024];
@@ -99,7 +99,7 @@ std::ifstream& operator>>(std::ifstream& stream, ReservedRoom& res)
 	buff[val] = '\0';
 	res.setName(buff);
 
-	stream.read((char*)&res.getInterval(), sizeof(Interval));
+	stream.read((char*)&res.interval, sizeof(Interval));
 	return stream;
 }
 
