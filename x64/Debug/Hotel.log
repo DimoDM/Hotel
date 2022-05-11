@@ -1,1 +1,20 @@
-﻿  Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe
+﻿  Hotel.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(157,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(159,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(161,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(176,32): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(177,5): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(67,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(61): message : while compiling class template member function 'void RoomList<ReservedRoom>::loadList(void)'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(96): message : see reference to function template instantiation 'void RoomList<ReservedRoom>::loadList(void)' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(94): message : while compiling class template member function 'RoomList<ReservedRoom>::RoomList(void)'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(43): message : see reference to function template instantiation 'RoomList<ReservedRoom>::RoomList(void)' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(15): message : see reference to class template instantiation 'RoomList<ReservedRoom>' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(88,1): warning C4267: 'argument': conversion from 'size_t' to 'std::ios_base::seekdir', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(84): message : while compiling class template member function 'size_t RoomList<ReservedRoom>::getFileSize(std::ifstream &)'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(66): message : see reference to function template instantiation 'size_t RoomList<ReservedRoom>::getFileSize(std::ifstream &)' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(50): message : while compiling class template member function 'void RoomList<ReservedRoom>::saveChanges(void)'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(140): message : see reference to function template instantiation 'void RoomList<ReservedRoom>::saveChanges(void)' being compiled
+  main.cpp
+  Generating Code...
+  Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe
