@@ -65,6 +65,11 @@ Hotel::Hotel(const char* fileName)
 	init();
 }
 
+const String& Hotel::getFileName() const
+{
+	return fileName;
+}
+
 void Hotel::init()
 {
 	clList.setFileName("closedRooms.dat");

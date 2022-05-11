@@ -17,7 +17,6 @@ class Hotel
 
 	//std::fstream roomsFile;
 	String fileName;
-	Date currentDate;
 	bool isRunning;
 
 	void loadValidRooms(ifstream&);
@@ -29,9 +28,10 @@ class Hotel
 
 
 public:
-
+	static Date currentDate;
 	Hotel();
 	Hotel(const char*);
+	const String& getFileName() const;
 
 	void update();
 

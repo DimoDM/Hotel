@@ -47,3 +47,13 @@ size_t FileManager::getFileSize(std::ifstream& file)
 	file.seekg(0, curPos);
 	return result;
 }
+
+size_t FileManager::getFileSize(std::fstream& file)
+{
+	if (!file.is_open()) return 0;
+	size_t curPos = file.tellg();
+	file.seekg(0, std::ios::end);
+	size_t result = file.tellg();
+	file.seekg(0, curPos);
+	return result;
+}
