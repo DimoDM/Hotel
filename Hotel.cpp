@@ -19,7 +19,7 @@ void Hotel::makeRegistration(const char* name, const Date& date)
 	cout << "Enter number of the room: ";
 	int id;
 	cin >> id;
-	Reservation res(name, id, Interval(date, period));
+	ReservedRoom res(name, id, Interval(date, period));
 	cout <<(bool) isValidRoomId(id) << endl;
 	if (isValidRoomId(id)) resList.addToList(res);
 	else cout << "There is no such room" << endl;
@@ -121,7 +121,7 @@ void Hotel::showFreeRooms()
 	date.init();
 	Interval interval(date, 1);
 	for (int i = 0; i < rooms.getSize(); i++)
-		if (!resList.isInList(rooms[i], interval))
+		if (!resList.isInList({ rooms[i], interval }))
 			cout << rooms[i] << " is free for today" << endl;
 
 }

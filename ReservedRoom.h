@@ -7,14 +7,14 @@
 class ReservedRoom : private Room
 {
 	Interval interval;
-	String name;
+	String name = "unknown";
 
 public:
 
 	ReservedRoom();
 	ReservedRoom(const Room& room, const Interval&);
-	ReservedRoom(const int& id, const Interval& interval);
-	ReservedRoom(const char* name, const int& id, const Interval& interval);
+	ReservedRoom(const int id, const Interval& interval);
+	ReservedRoom(const char* name, const int id, const Interval& interval);
 
 	void setId(const size_t&);
 	void setBeds(const size_t&);

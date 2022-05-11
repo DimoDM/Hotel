@@ -13,14 +13,14 @@ ReservedRoom::ReservedRoom(const Room& room, const Interval& interval) : Room()
 	setInterval(interval);
 }
 
-ReservedRoom::ReservedRoom(const int& id, const Interval& interval)
+ReservedRoom::ReservedRoom(const int id, const Interval& interval)
 {
 	name = "unknown";
 	setId(id);
 	setInterval(interval);
 }
 
-ReservedRoom::ReservedRoom(const char* name, const int& id, const Interval& interval)
+ReservedRoom::ReservedRoom(const char* name, const int id, const Interval& interval)
 {
 	this->name = name;
 	setId(id);
@@ -96,6 +96,7 @@ std::fstream& operator>>(std::fstream& stream, ReservedRoom& res)
 
 	char buff[1024];
 	stream.read(buff, val);
+	buff[val] = '\0';
 	res.name = buff;
 
 	stream.read((char*)&res.interval, sizeof(Interval));

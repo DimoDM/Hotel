@@ -11,7 +11,7 @@ using namespace std;
 class Hotel
 {
 	Vector<Room> rooms;
-	ReservationList resList;
+	ReservationList<ReservedRoom> resList;
 	std::fstream roomsFile;
 	Date currentDate;
 	bool isRunning;

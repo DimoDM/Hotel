@@ -24,12 +24,6 @@
     <ClCompile Include="Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Reservation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ReservationList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Interval.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReservedRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,13 +53,13 @@
     <ClInclude Include="ReservationList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Reservation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Interval.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservedRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

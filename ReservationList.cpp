@@ -8,9 +8,9 @@ void ReservationList::saveChanges()
 		file << data[i];
 	}
 }
-void ReservationList::getList()
+void ReservationList::loadList()
 {
-		Reservation res;
+		ReservedRoom res;
 		size_t val = getFileSize();
 		file.seekg(0, std::ios::beg);
 		while (file.tellg() < val) {
@@ -39,6 +39,8 @@ void ReservationList::printList()
 		cout << data[i];
 	}
 }
+
+
 ReservationList::ReservationList()
 {
 	fstream f("resList.dat", ios::binary | ios::app);
@@ -50,7 +52,7 @@ ReservationList::ReservationList()
 		exit(1);
 	}
 	if (getFileSize() > 0) {
-		getList();
+		loadList();
 	}
 }
 
@@ -59,7 +61,7 @@ const size_t ReservationList::getDataSize() const
 	return data.getSize();
 }
 
-Vector<Reservation>& ReservationList::getData()
+Vector<ReservedRoom>& ReservationList::getData()
 {
 	return data;
 }
@@ -67,12 +69,12 @@ Vector<Reservation>& ReservationList::getData()
 
 void ReservationList::addToList(const Room& room, const Interval& interval)
 {
-	Reservation res(room, interval);
+	ReservedRoom res(room, interval);
 	addToList(res);
 	
 }
 
-void ReservationList::addToList(const Reservation& res)
+void ReservationList::addToList(const ReservedRoom& res)
 {
 	if (!isInList(res)) {
 		data.push_back(res);
@@ -83,11 +85,11 @@ void ReservationList::addToList(const Reservation& res)
 
 bool ReservationList::isInList(const Room& room, const Interval& interval)
 {
-	Reservation res(room, interval);
+	ReservedRoom res(room, interval);
 	return isInList(res);
 }
 
-bool ReservationList::isInList(const Reservation& res)
+bool ReservationList::isInList(const ReservedRoom& res)
 {
 	for (int i = 0; i < data.getSize(); i++) {
 		if (data[i] == res) return true;
@@ -97,11 +99,11 @@ bool ReservationList::isInList(const Reservation& res)
 
 void ReservationList::removeFromList(const Room& room, const Interval& interval)
 {
-	Reservation res(room, interval);
+	ReservedRoom res(room, interval);
 	removeFromList(res);
 }
 
-void ReservationList::removeFromList(const Reservation& res)
+void ReservationList::removeFromList(const ReservedRoom& res)
 {
 	for (int i = 0; i < data.getSize(); i++) {
 		if (res == data[i]) {

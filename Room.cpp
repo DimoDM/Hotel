@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 
-Room::Room(size_t id = 0, size_t numberBeds = 0)
+Room::Room(size_t id, size_t numberBeds)
 {
 	this->id = id;
 	this->numberBeds = numberBeds;
