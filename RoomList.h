@@ -9,13 +9,12 @@
 #include<iostream>
 using namespace std;
 
-
 template <typename T>
-class ReservationList
+class RoomList
 {
 	//source for limit T:
 	//https://stackoverflow.com/questions/3175219/restrict-c-template-parameter-to-subclass
-	static_assert(std::is_base_of<ReservedRoom, T>::value, "Derived not derived from BaseClass");
+	static_assert(std::is_base_of<Room, T>::value, "Derived not derived from BaseClass");
 
 	Vector<T> data;
 	std::fstream file;
@@ -26,15 +25,12 @@ class ReservationList
 
 public:
 
-	ReservationList();
+	RoomList();
 	const size_t getDataSize() const;
 	Vector<T>& getData();
 	void printList();
-	//void addToList(const Room&, const Interval&);
 	void addToList(const T&);
-	//bool isInList(const Room&, const Interval&);
 	bool isInList(const T&);
-	//void removeFromList(const Room&, const Interval&);
 	void removeFromList(const T&);
 	void changeStayingPeriod(const Room, const Date);
 	//void makeRaport(const Interval&);
@@ -46,7 +42,7 @@ public:
 };
 
 template<typename T>
-void ReservationList<T>::saveChanges()
+void RoomList<T>::saveChanges()
 {
 	file.seekp(0, std::ios::beg);
 	for (int i = 0; i < data.getSize(); i++) {
@@ -55,14 +51,14 @@ void ReservationList<T>::saveChanges()
 }
 
 template<typename T>
-void ReservationList<T>::loadList()
+void RoomList<T>::loadList()
 {
-	ReservedRoom res;
+	T t;
 	size_t val = getFileSize();
 	file.seekg(0, std::ios::beg);
 	while (file.tellg() < val) {
-		file >> res;
-		data.push_back(res);
+		file >> t;
+		data.push_back(t);
 	}
 	file.close();
 	file.open("resList.dat", ios::binary | ios::in | ios::out | ios::ate | ios::trunc);
@@ -73,7 +69,7 @@ void ReservationList<T>::loadList()
 }
 
 template<typename T>
-size_t ReservationList<T>::getFileSize()
+size_t RoomList<T>::getFileSize()
 {
 	size_t curPos = file.tellg();
 	file.seekg(0, ios::end);
@@ -83,7 +79,7 @@ size_t ReservationList<T>::getFileSize()
 }
 
 template<typename T>
-ReservationList<T>::ReservationList()
+RoomList<T>::RoomList()
 {
 	fstream f("resList.dat", ios::binary | ios::app);
 	f.close();
@@ -99,19 +95,19 @@ ReservationList<T>::ReservationList()
 }
 
 template<typename T>
-const size_t ReservationList<T>::getDataSize() const
+const size_t RoomList<T>::getDataSize() const
 {
 	return data.getSize();
 }
 
 template<typename T>
-Vector<T>& ReservationList<T>::getData()
+Vector<T>& RoomList<T>::getData()
 {
 	return data;
 }
 
 template<typename T>
-void ReservationList<T>::printList()
+void RoomList<T>::printList()
 {
 	cout << data.getSize() << endl;
 	for (int i = 0; i < data.getSize(); i++) {
@@ -120,7 +116,7 @@ void ReservationList<T>::printList()
 }
 
 template<typename T>
-void ReservationList<T>::addToList(const T& t)
+void RoomList<T>::addToList(const T& t)
 {
 	if (!isInList(t)) {
 		data.push_back(t);
@@ -130,7 +126,7 @@ void ReservationList<T>::addToList(const T& t)
 }
 
 template<typename T>
-bool ReservationList<T>::isInList(const T& t)
+bool RoomList<T>::isInList(const T& t)
 {
 	for (int i = 0; i < data.getSize(); i++) {
 		if (data[i] == t) return true;
@@ -139,7 +135,7 @@ bool ReservationList<T>::isInList(const T& t)
 }
 
 template<typename T>
-void ReservationList<T>::removeFromList(const T& t)
+void RoomList<T>::removeFromList(const T& t)
 {
 	for (int i = 0; i < data.getSize(); i++) {
 		if (t == data[i]) {
@@ -148,10 +144,11 @@ void ReservationList<T>::removeFromList(const T& t)
 			break;
 		}
 	}
+	saveChanges();
 }
 
 template<typename T>
-void ReservationList<T>::changeStayingPeriod(const Room room, const Date date)
+void RoomList<T>::changeStayingPeriod(const Room room, const Date date)
 {
 	for (int i = 0; i < data.getSize(); i++) {
 		if (room.id == data[i].getId() && data[i].getInterval() == Interval(date, 0)) {
@@ -162,6 +159,7 @@ void ReservationList<T>::changeStayingPeriod(const Room room, const Date date)
 			break;
 		}
 	}
+	saveChanges();
 }
 
 

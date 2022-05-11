@@ -36,6 +36,9 @@
     <ClCompile Include="ReservedRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ClosedRoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hotel.h">
@@ -50,9 +53,6 @@
     <ClInclude Include="Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ReservationList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Interval.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -60,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ReservedRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClosedRoom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
