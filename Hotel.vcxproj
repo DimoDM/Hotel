@@ -161,6 +161,11 @@
     <ClInclude Include="String.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="closedRooms.dat" />
+    <None Include="newResList" />
+    <None Include="resList.dat" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

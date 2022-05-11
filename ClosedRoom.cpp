@@ -2,6 +2,12 @@
 #include<iostream>
 
 
+ClosedRoom::ClosedRoom(const size_t& id, const Interval& interval)
+{
+	setId(id);
+	setInterval(interval);
+}
+
 void ClosedRoom::setId(const size_t& id)
 {
 	this->id = id;
@@ -29,14 +35,14 @@ const Interval& ClosedRoom::getInterval() const
 	return interval;
 }
 
-std::fstream& operator<<(std::fstream& stream, const ClosedRoom& room)
+std::ofstream& operator<<(std::ofstream& stream, const ClosedRoom& room)
 {
-	stream.write((const char*)&room.id, sizeof(size_t));
-	stream.write((const char*)&room.interval, sizeof(Interval));
+	stream.write((const char*)&room.getId(), sizeof(size_t));
+	stream.write((const char*)&room.getInterval(), sizeof(Interval));
 	return stream;
 }
 
-std::fstream& operator>>(std::fstream& stream, ClosedRoom& room)
+std::ifstream& operator>>(std::ifstream& stream, ClosedRoom& room)
 {
 	size_t val;
 	stream.read((char*)&room.id, sizeof(size_t));

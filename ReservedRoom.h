@@ -16,6 +16,7 @@ public:
 	ReservedRoom(const int id, const Interval& interval);
 	ReservedRoom(const char* name, const int id, const Interval& interval);
 
+	void init();
 	void setId(const size_t&);
 	void setBeds(const size_t&);
 	void setName(const char*);
@@ -29,6 +30,7 @@ public:
 
 	friend std::ifstream& operator>>(std::ifstream&, ReservedRoom&);
 };
+
 std::ostream& operator<<(std::ostream&, const ReservedRoom&);
 const std::istream& operator>>(const std::istream&, ReservedRoom&);
 std::ofstream& operator<<(std::ofstream&, const ReservedRoom&);

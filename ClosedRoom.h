@@ -9,6 +9,9 @@ class ClosedRoom : private Room
 
 public:
 
+	ClosedRoom() = default;
+	ClosedRoom(const size_t&, const Interval&);
+
 	void setId(const size_t&);
 	void setInterval(const Interval&);
 	bool operator==(const ClosedRoom&) const;
@@ -16,8 +19,9 @@ public:
 	const size_t& getId() const;
 	const Interval& getInterval() const;
 
-	friend std::fstream& operator<<(std::fstream&, const ClosedRoom&);
-	friend std::fstream& operator>>(std::fstream&, ClosedRoom&);
-	friend std::ostream& operator<<(std::ostream&, const ClosedRoom&);
-	friend std::istream& operator>>(std::istream&, ClosedRoom&);
+	friend std::ifstream& operator>>(std::ifstream&, ClosedRoom&);
 };
+
+std::ostream& operator<<(std::ostream&, const ClosedRoom&);
+const std::istream& operator>>(const std::istream&, ClosedRoom&);
+std::ofstream& operator<<(std::ofstream&, const ClosedRoom&);

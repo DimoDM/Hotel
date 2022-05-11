@@ -23,11 +23,13 @@ class RoomList
 
 	void saveChanges();
 	void loadList();
+	void freeData();
 	 size_t getFileSize(std::ifstream&);
 
 public:
 	RoomList();
 	RoomList(const char*);
+	void setFileName(const char*);
 	const size_t getDataSize() const;
 	Vector<T>& getData();
 	void printList();
@@ -72,6 +74,12 @@ void RoomList<T>::loadList()
 }
 
 template<typename T>
+void RoomList<T>::freeData()
+{
+	while (data.getSize() != 0) data.pop_back();
+}
+
+template<typename T>
 size_t RoomList<T>::getFileSize(std::ifstream& file)
 {
 	size_t curPos = file.tellg();
@@ -92,6 +100,14 @@ template<typename T>
 RoomList<T>::RoomList(const char* fileName)
 {
 	this->fileName = fileName;
+	loadList();
+}
+
+template<typename T>
+void RoomList<T>::setFileName(const char* name)
+{
+	fileName = name;
+	freeData();
 	loadList();
 }
 

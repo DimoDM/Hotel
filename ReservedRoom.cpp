@@ -27,6 +27,11 @@ ReservedRoom::ReservedRoom(const char* name, const int id, const Interval& inter
 	setInterval(interval);
 }
 
+void ReservedRoom::init()
+{
+
+}
+
 void ReservedRoom::setId(const size_t& id)
 {
 	this->id = id;

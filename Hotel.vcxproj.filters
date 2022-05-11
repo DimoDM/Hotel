@@ -75,4 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resList.dat" />
+    <None Include="newResList" />
+    <None Include="closedRooms.dat" />
+  </ItemGroup>
 </Project>
