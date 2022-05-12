@@ -1,4 +1,0 @@
-client: unknown ,id of room: 12 ,Date: Date: 2022/5/1 ,period: 1
-client: unknown ,id of room: 33 ,Date: Date: 2022/5/1 ,period: 1
-client: Dimo ,id of room: 14 ,Date: Date: 2022/6/1 ,period: 3
-client: Ivan ,id of room: 23 ,Date: Date: 2022/5/20 ,period: 30

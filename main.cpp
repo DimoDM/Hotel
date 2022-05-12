@@ -1,16 +1,15 @@
 #include<iostream>
-#include"Hotel.h"
-#include"Vector.h"
-
-#include<map>
+#include"Controller/HotelController.h"
+#include"Structures/Vector.h"
+#include"UnitTests/UnitTests.h"
 using namespace std;
 
 int main()
 {
-	
-	Hotel hotel;
+	run();
+	HotelController hotel;
 	//hotel.getNumOfRooms();
-	while (hotel.getIsRunning()) {
+	while (hotel.isStillRunning()) {
 
 		hotel.update();
 
