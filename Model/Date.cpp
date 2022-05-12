@@ -26,24 +26,10 @@ Date::Date(int year, int mounth, int day)
 	setDay(day);
 }
 
-void Date::enter()
-{
-	Date date;
-	std::cout << "enter year: ";
-	std::cin >> date.year;
-	setYear(date.year);
-	std::cout << "enter mounth: ";
-	std::cin >> date.month;
-	setMonth(date.month);
-	std::cout << "enter day: ";
-	std::cin >> date.day;
-	setDay(date.day);
-}
-
 void Date::setYear(int year)
 {
 	if (year < 2021 || year > 2025) {
-		std::cout << "Invalid year. Year 2022 was set\n";
+		std::cout << "Invalid year. Year 2022 was set" << std::endl;
 		year = 2022;
 	}
 	this->year = year;
@@ -52,7 +38,7 @@ void Date::setYear(int year)
 void Date::setMonth(int mounth)
 {
 	if (mounth < 1 || mounth > 12) {
-		std::cout << "Invalid mounth. Mounth May set\n";
+		std::cout << "Invalid mounth. Mounth May set" << std::endl;
 		month = 5;
 	}
 	this->month = mounth;
@@ -119,6 +105,20 @@ const size_t Date::operator-(Date date) const
 		period++;
 	}
 	return period;
+}
+
+std::istream& operator>>(std::istream& stream, Date& date)
+{
+	std::cout << "enter year: ";
+	stream >> date.year;
+	date.setYear(date.year);
+	std::cout << "enter mounth: ";
+	stream >> date.month;
+	date.setMonth(date.month);
+	std::cout << "enter day: ";
+	stream >> date.day;
+	date.setDay(date.day);
+	return stream;
 }
 
 std::ostream& operator<<(std::ostream& stream, const Date& date)

@@ -2,13 +2,13 @@
 #include<iostream>
 
 
-ClosedRoom::ClosedRoom(const size_t& id, const Interval& interval)
+ClosedRoom::ClosedRoom(const size_t id, const Interval& interval)
 {
 	setId(id);
 	setInterval(interval);
 }
 
-void ClosedRoom::setId(const size_t& id)
+void ClosedRoom::setId(const size_t id)
 {
 	this->id = id;
 }

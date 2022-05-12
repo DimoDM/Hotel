@@ -10,9 +10,9 @@ class ClosedRoom : private Room
 public:
 
 	ClosedRoom() = default;
-	ClosedRoom(const size_t&, const Interval&);
+	ClosedRoom(const size_t, const Interval&);
 
-	void setId(const size_t&);
+	void setId(const size_t);
 	void setInterval(const Interval&);
 	bool operator==(const ClosedRoom&) const;
 

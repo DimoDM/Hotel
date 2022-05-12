@@ -25,7 +25,7 @@ class Hotel
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();
-	const Room& searchRoom(int, const Interval&);
+	void findRoom(int, const Interval&);
 
 
 public:

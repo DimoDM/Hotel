@@ -58,7 +58,7 @@ void Hotel::makeReservation()
 	cout << "Enter name for reservation: ";
 	cin >> name;
 	Date date;
-	date.enter();
+	cin >> date;
 	makeRegistration(name, date);
 }
 
@@ -108,7 +108,7 @@ void Hotel::regGuest()
 void Hotel::makeReport()
 {
 	Interval interval;
-	interval.enter();
+	cin >> interval;
 	String fileName("report");
 	(((((fileName += interval.getDate().getYear()) += "-")
 		+= interval.getDate().getMonth()) += "-")
@@ -127,7 +127,7 @@ void Hotel::makeReport()
 void Hotel::showFreeRooms()
 {
 	Date date;
-	date.enter();
+	cin >> date;
 	Interval interval(date, 1);
 	for (int i = 0; i < rooms.getSize(); i++)
 		if (!resList.isInList({ rooms[i], interval })) {
@@ -144,7 +144,6 @@ void Hotel::freeRoom()
 	int id;
 	cin >> id;
 	if (isValidRoomId(id)) {
-		//resList.removeFromList(rooms[id], Interval(currentDate, 1));
 		resList.changeStayingPeriod(Room(id), currentDate);
 	}
 	else cout << "Invalid id" << endl;
@@ -153,25 +152,32 @@ void Hotel::freeRoom()
 void Hotel::searchRoom()
 {
 	Interval interval;
-	interval.enter();
+	cin >> interval;
 	cout << "Enter min number of beds: ";
 	int beds;
 	cin >> beds;
-	cout << searchRoom(beds, interval) << "is free" << endl;
+	findRoom(beds, interval);
 }
 
-const Room& Hotel::searchRoom(int beds, const Interval& interval)
+void Hotel::findRoom(int beds, const Interval& interval)
 {
-	//TODO better
-	int currentMinBeds = rooms[0].numberBeds > beds ? rooms[0].numberBeds : beds;
+	int currentMinBeds = -1;
 	int id = 0;
 	for (int i = rooms.getSize() - 1; i >= 0; i--) {
-		if (currentMinBeds >= rooms[i].numberBeds && rooms[i].numberBeds >= beds) {
+		if (currentMinBeds < beds && rooms[i].numberBeds >= beds) {
+			currentMinBeds = rooms[i].numberBeds;
+			id = i;
+		}
+		else if (currentMinBeds >= rooms[i].numberBeds 
+			&& rooms[i].numberBeds >= beds 
+			&& !resList.isInList(ReservedRoom(rooms[i], interval))
+			&& !clList.isInList(ClosedRoom(rooms[i].id, interval))) {
 			currentMinBeds = rooms[i].numberBeds;
 			id = i;
 		}
 	}
-	return rooms[id];
+	if (currentMinBeds == -1) cout << "We don't have free rooms with " << beds << " beds" << endl;
+	else cout << rooms[id] << "is free" << endl;
 }
 
 void Hotel::closeRoom()
@@ -185,9 +191,8 @@ void Hotel::closeRoom()
 	}
 
 	Interval interval;
-	interval.enter();
+	cin >> interval;
 	ClosedRoom room(id, interval);
-	//cout << (bool)isValidRoomId(id) << endl;
 	if (resList.isInList({ id, interval }))
 		resList.changeStayingPeriod(id, interval.getDate());
 	clList.addToList(room);

@@ -8,14 +8,15 @@ void HotelController::changeSettings()
 	while (true) {
 		cout << "Type 1 to use default settings and exit." << endl
 			<< "Type 2 to manually enter current date." << endl;
-		if (roomFile.getSize() == 0) cout << "Type 3 to manually enter name for valid room's file(once set it cannot be changed)" << endl;
+		if (roomFile.getSize() == 0) 
+			cout << "Type 3 to manually enter name for valid room's file(once set it cannot be changed)" << endl;
 		cout << "Type 0 to exit this menu" << endl;
 
 		cin >> choice;
 		switch (choice) {
 		case 1: hotel = new Hotel();
 		case 0: if (roomFile.getSize() == 0 && hotel == nullptr) hotel = new Hotel(roomFile.c_str()); return;
-		case 2: currentDate.enter(); break;
+		case 2: cin >> currentDate; break;
 		case 3: cout << "file name: ";
 			cin >> roomFile; hotel = new Hotel(roomFile.c_str());
 			break;
@@ -83,7 +84,7 @@ void HotelController::enterOption()
 	case 4: hotel->makeReport(); break;
 	case 5: hotel->searchRoom(); break;
 	case 6: hotel->closeRoom(); break;
-	case 7: currentDate.enter(); saveSettings(); hotel->currentDate = currentDate; break;
+	case 7: cin >> currentDate; saveSettings(); hotel->currentDate = currentDate; break;
 	default: cout << "Invalid input" << endl; break;
 	}
 }
@@ -113,7 +114,7 @@ void HotelController::init()
 
 void HotelController::update()
 {
-	cout << "Current " << currentDate << endl << endl;
+	cout << endl << "Current " << currentDate << endl << endl;
 	showOptions();
 	enterOption();
 }

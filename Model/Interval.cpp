@@ -7,17 +7,6 @@ Interval::Interval(Date date, size_t period)
 	setPeriod(period);
 }
 
-void Interval::enter()
-{
-	Date date;
-	date.enter();
-	setDate(date);
-	int period;
-	std::cout << "enter period: ";
-	std::cin >> period;
-	setPeriod(period);
-}
-
 void Interval::setDate(const Date date)
 {
 	this->date = date;
@@ -60,6 +49,18 @@ bool Interval::operator==(const Interval& interval) const
 bool Interval::operator<(const Interval& interval) const
 {
 	return (date + period) < interval.date;
+}
+
+std::istream& operator>>(std::istream& stream, Interval& interval)
+{
+	Date date;
+	stream >> date;
+	interval.setDate(date);
+	int period;
+	std::cout << "enter period: ";
+	stream >> period;
+	interval.setPeriod(period);
+	return stream;
 }
 
 std::ostream& operator<<(std::ostream& stream, const Interval& interval)
