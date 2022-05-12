@@ -50,13 +50,13 @@ std::ofstream& ClosedRoom::writeFile(std::ofstream& stream) {
 
 std::ofstream& operator<<(std::ofstream& stream, const ClosedRoom& room)
 {
-	stream << "id of room: " << room.getId() << " ," << room.getInterval() << '\n';
+	stream << "id of room: " << room.getId() << " ," << room.getInterval() << std::endl;
 	return stream;
 }
 
 std::ostream& operator<<(std::ostream& stream, const ClosedRoom& room)
 {
-	stream << "id of room: " << room.getId() << " ," << room.getInterval() << '\n';
+	stream << "id of room: " << room.getId() << " ," << room.getInterval() << std::endl;
 	return stream;
 }
 

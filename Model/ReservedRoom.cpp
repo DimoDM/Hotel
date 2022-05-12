@@ -92,7 +92,7 @@ std::ofstream& ReservedRoom::writeFile(std::ofstream& stream)
 
 std::ofstream& operator<<(std::ofstream& stream, const ReservedRoom& res)
 {
-	stream << "client: " << res.getName() << " ,id of room: " << res.getId() << " ," << res.getInterval() << '\n';
+	stream << "client: " << res.getName() << " ,id of room: " << res.getId() << " ," << res.getInterval() << std::endl;
 	return stream;
 }
 
@@ -118,7 +118,7 @@ std::ifstream& operator>>(std::ifstream& stream, ReservedRoom& res)
 
 std::ostream& operator<<(std::ostream& stream, const ReservedRoom& res)
 {
-	stream << "client: " << res.getName() << " ,id of room: " << res.getId() << " ," << res.getInterval() << '\n';
+	stream << "client: " << res.getName() << " ,id of room: " << res.getId() << " ," << res.getInterval() << std::endl;
 	return stream;
 }
 
