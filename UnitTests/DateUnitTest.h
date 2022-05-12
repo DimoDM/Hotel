@@ -53,3 +53,9 @@ TEST_CASE("OPERATOR+=") {
 	Date b(2022, 3, 6);
 	CHECK_EQ(b == a, true);
 }
+
+TEST_CASE("OPERATOR-") {
+	Date a(2022, 3, 1);
+	Date b(2022, 3, 6);
+	CHECK_EQ(b - a, 5);
+}

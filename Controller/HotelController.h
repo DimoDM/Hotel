@@ -12,7 +12,7 @@ class HotelController
 	bool isRunning;
 	Date currentDate;
 
-	const char* FILELOG = "files/log.dad";
+	const char* FILELOG = "files/log.sys";
 	void changeSettings();
 	void saveSettings(fstream&);
 	void saveSettings();

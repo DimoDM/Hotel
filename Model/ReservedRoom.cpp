@@ -3,19 +3,17 @@
 
 ReservedRoom::ReservedRoom() : Room()
 {
-	name = "unknown";
+	name = GUESTNAME;
 }
 
-ReservedRoom::ReservedRoom(const Room& room, const Interval& interval) : Room()
+ReservedRoom::ReservedRoom(const Room& room, const Interval& interval) : ReservedRoom()
 {
-	name = "unknown";
 	setId(room.id);
 	setInterval(interval);
 }
 
-ReservedRoom::ReservedRoom(const size_t id, const Interval& interval)
+ReservedRoom::ReservedRoom(const size_t id, const Interval& interval) : ReservedRoom()
 {
-	name = "unknown";
 	setId(id);
 	setInterval(interval);
 }
@@ -54,8 +52,7 @@ void ReservedRoom::setInterval(const Interval& interval)
 
 bool ReservedRoom::operator==(const ReservedRoom& res) const
 {
-	if (id == res.id && interval == res.interval) return true;
-	return false;
+	return id == res.id && interval == res.interval;
 }
 
 const ReservedRoom& ReservedRoom::operator=(const ReservedRoom& res)

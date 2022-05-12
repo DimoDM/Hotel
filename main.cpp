@@ -8,6 +8,7 @@ int main()
 {
 	run();
 	HotelController hotel;
+	hotel.init();
 	//hotel.getNumOfRooms();
 	while (hotel.isStillRunning()) {
 

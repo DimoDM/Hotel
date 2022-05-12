@@ -25,7 +25,7 @@ Date::Date(int year, int mounth, int day)
 	setDay(day);
 }
 
-void Date::init()
+void Date::enter()
 {
 	Date date;
 	std::cout << "enter year: ";
@@ -104,13 +104,16 @@ bool Date::operator<(const Date date) const
 	return year <= date.year && month <= date.month && day < date.day;
 }
 
-const size_t Date::operator-(const Date date) const
+const size_t Date::operator-(Date date) const
 {
-	//TODO
-	//can be improved
 	Date curDate = *this;
+	if (date < curDate) {
+		Date swap = date;
+		date = curDate;
+		curDate = swap;
+	}
 	int period = 0;
-	while (!(curDate == *this)) {
+	while (!(curDate == date)) {
 		curDate.nextDate(1);
 		period++;
 	}

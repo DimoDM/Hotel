@@ -7,10 +7,10 @@ Interval::Interval(Date date, size_t period)
 	setPeriod(period);
 }
 
-void Interval::init()
+void Interval::enter()
 {
 	Date date;
-	date.init();
+	date.enter();
 	setDate(date);
 	int period;
 	std::cout << "enter period: ";
@@ -23,13 +23,13 @@ void Interval::setDate(const Date date)
 	this->date = date;
 }
 
-void Interval::setPeriod(const size_t period)
+void Interval::setPeriod(size_t period)
 {
-	if (period > 0 && period < 100) this->period = period;
-	else {
+	if (period == 0 || period >= 100) {
 		std::cout << "If Kamen enter input(mainata ti)\nElse, invalid period. Default of 1 day is set.\n";
-		this->period = 1;
+		period = 1;
 	}
+	this->period = period;
 }
 
 const Date Interval::getDate() const
@@ -44,6 +44,8 @@ const int Interval::getPeriod() const
 
 bool Interval::operator==(const Interval& interval) const
 {
+	return (date < interval.date && interval.date < (date + period)) || (interval.date < date&& date < (interval.date + interval.period)) || interval.date == date;
+
 	if (date < interval.date) {
 		if ((date + period) < interval.date) return false;
 		return true;

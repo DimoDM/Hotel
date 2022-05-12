@@ -4,7 +4,7 @@ using namespace std;
 void Hotel::loadValidRooms(ifstream& file)
 {
 	size_t fileSize = FileManager::getFileSize(file);
-	if (fileSize <= 9) {
+	if (fileSize <= 9) { //first line of file is with info for the table, so thiw if check if there is at least 1 element in the file
 		cout << "Error! There are no rooms in the list or list is in incorrect format.";
 		exit(1);
 	}
@@ -45,7 +45,7 @@ void Hotel::makeRegistration(const char* name, const Date& date)
 
 void Hotel::makeRegistration()
 {
-	makeRegistration("unknown", currentDate);
+	makeRegistration("Guest", currentDate);
 }
 
 void Hotel::makeReservation()
@@ -54,7 +54,7 @@ void Hotel::makeReservation()
 	cout << "Enter name for reservation: ";
 	cin >> name;
 	Date date;
-	date.init();
+	date.enter();
 	makeRegistration(name, date);
 }
 
@@ -106,7 +106,7 @@ void Hotel::regGuest()
 void Hotel::makeReport()
 {
 	Interval interval;
-	interval.init();
+	interval.enter();
 	String fileName("report");
 	(((((fileName += interval.getDate().getYear()) += "-")
 		+= interval.getDate().getMonth()) += "-")
@@ -125,7 +125,7 @@ void Hotel::makeReport()
 void Hotel::showFreeRooms()
 {
 	Date date;
-	date.init();
+	date.enter();
 	Interval interval(date, 1);
 	for (int i = 0; i < rooms.getSize(); i++)
 		if (!resList.isInList({ rooms[i], interval })) {
@@ -141,10 +141,9 @@ void Hotel::freeRoom()
 	cout << "Enter id of room: ";
 	int id;
 	cin >> id;
-	id = isValidRoomId(id);
-	if (id != 0) {
+	if (isValidRoomId(id)) {
 		//resList.removeFromList(rooms[id], Interval(currentDate, 1));
-		resList.changeStayingPeriod(rooms[id], currentDate);
+		resList.changeStayingPeriod(Room(id), currentDate);
 	}
 	else cout << "Invalid id" << endl;
 }
@@ -152,7 +151,7 @@ void Hotel::freeRoom()
 void Hotel::searchRoom()
 {
 	Interval interval;
-	interval.init();
+	interval.enter();
 	cout << "Enter min number of beds: ";
 	int beds;
 	cin >> beds;
@@ -178,15 +177,16 @@ void Hotel::closeRoom()
 	size_t id;
 	cout << "Enter number of the room: ";
 	cin >> id;
-	Interval interval;
-	interval.init();
-	ClosedRoom room(id, interval);
-	cout << ((bool)isValidRoomId(id) ? true : false )<< endl;
 	if (isValidRoomId(id)) {
-		if (resList.isInList({ id, interval }))
-			resList.changeStayingPeriod(id, interval.getDate());
-		clList.addToList(room);
+		cout << "There is no such room" << endl;
+		return;
 	}
-	else cout << "There is no such room" << endl;
 
+	Interval interval;
+	interval.enter();
+	ClosedRoom room(id, interval);
+	//cout << (bool)isValidRoomId(id) << endl;
+	if (resList.isInList({ id, interval }))
+		resList.changeStayingPeriod(id, interval.getDate());
+	clList.addToList(room);
 }

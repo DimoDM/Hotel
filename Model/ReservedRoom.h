@@ -4,10 +4,13 @@
 #include"Interval.h"
 #include"../Structures/String.h"
 #pragma warning(disable : 4996)
+
+
 class ReservedRoom : private Room
 {
 	Interval interval;
-	String name = "unknown";
+	String name = "Guest";
+	const char* GUESTNAME = "Guest";
 
 public:
 

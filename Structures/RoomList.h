@@ -18,7 +18,6 @@ class RoomList
 	static_assert(std::is_base_of<Room, T>::value, "Derived not derived from BaseClass");
 
 	Vector<T> data;
-	//std::fstream file;
 	String fileName;
 
 	void saveChanges();
@@ -147,7 +146,7 @@ template<typename T>
 void RoomList<T>::changeStayingPeriod(const Room room, const Date date)
 {
 	for (int i = 0; i < data.getSize(); i++) {
-		if (room.id == data[i].getId() && data[i].getInterval() == Interval(date, 0)) {
+		if (room.id == data[i].getId() && data[i].getInterval() == Interval(date, 1)) {
 			Date newInterval = data[i].getInterval().getDate();
 			size_t newPeriod = date - newInterval;
 			if (newPeriod > 0) data[i].setInterval({ newInterval, date - newInterval });

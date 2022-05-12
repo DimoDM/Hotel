@@ -14,7 +14,7 @@ public:
 
 	Date(int year = 2022, int mounth = 5, int day = 1);
 
-	void init();
+	void enter();
 
 	void setYear(const int);
 	void setMonth(const int);
