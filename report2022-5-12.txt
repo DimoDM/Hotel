@@ -1,7 +1,0 @@
-client: Dimo ,id of room: 12 ,Date: Date: 2022/5/12 ,period: 3
-client: unknown ,id of room: 13 ,Date: Date: 2022/5/12 ,period: 1
-client: unknown ,id of room: 11 ,Date: Date: 2022/5/12 ,period: 1
-client: unknown ,id of room: 22 ,Date: Date: 2022/5/15 ,period: 3
-client: unknown ,id of room: 34 ,Date: Date: 2022/5/18 ,period: 2
-client: unknown ,id of room: 31 ,Date: Date: 2022/5/12 ,period: 1
-client: Guest ,id of room: 33 ,Date: Date: 2022/5/12 ,period: 3

@@ -1,2 +1,11 @@
-﻿  main.cpp
+﻿  ClosedRoom.cpp
+  Interval.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Model\Interval.cpp(31,15): warning C4267: 'return': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Model\Interval.cpp(36,64): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Model\Interval.cpp(36,133): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Model\Interval.cpp(39,6): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Model\Interval.cpp(43,6): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Model\Interval.cpp(51,23): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+  ReservedRoom.cpp
+  Generating Code...
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe
