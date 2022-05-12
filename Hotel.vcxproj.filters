@@ -18,76 +18,73 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Hotel.cpp">
+    <ClCompile Include="Structures\FileManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Room.cpp">
+    <ClCompile Include="Structures\String.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Interval.cpp">
+    <ClCompile Include="Model\ClosedRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Date.cpp">
+    <ClCompile Include="Model\Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="String.cpp">
+    <ClCompile Include="Model\Hotel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReservedRoom.cpp">
+    <ClCompile Include="Model\Interval.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClosedRoom.cpp">
+    <ClCompile Include="Model\ReservedRoom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileManager.cpp">
+    <ClCompile Include="Model\Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HotelController.cpp">
+    <ClCompile Include="Controller\HotelController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hotel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Room.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Date.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Interval.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="String.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ReservedRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RoomList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ClosedRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FileManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="doctest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HotelController.h">
+    <ClInclude Include="Structures\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\FileManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\RoomList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ClosedRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Hotel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Interval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ReservedRoom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\HotelController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resList.dat" />
-    <None Include="newResList" />
-    <None Include="closedRooms.dat" />
-    <None Include="Rooms.csv" />
+    <None Include="files\Rooms.csv" />
   </ItemGroup>
 </Project>

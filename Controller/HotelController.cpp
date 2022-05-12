@@ -14,7 +14,7 @@ void HotelController::changeSettings()
 		cin >> choice;
 		switch (choice) {
 		case 1: hotel = new Hotel();
-		case 0: if (!strcmp(roomFile.c_str(), "") && hotel == nullptr) hotel = new Hotel(roomFile.c_str()); return;
+		case 0: if (strcmp(roomFile.c_str(), "") && hotel == nullptr) hotel = new Hotel(roomFile.c_str()); return;
 		case 2: currentDate.init(); break;
 		case 3: cout << "file name: ";
 			cin >> roomFile; hotel = new Hotel(roomFile.c_str());

@@ -1,8 +1,8 @@
 #pragma once
 #include"Vector.h"
-#include"Room.h"
-#include"ReservedRoom.h"
-#include"Interval.h"
+#include"../Model/Room.h"
+#include"../Model/ReservedRoom.h"
+#include"../Model/Interval.h"
 #include<fstream>
 #include<ostream>
 #include<istream>

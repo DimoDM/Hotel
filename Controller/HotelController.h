@@ -1,6 +1,6 @@
 #pragma once
-#include"Hotel.h"
-#include"FileManager.h"
+#include"../Model/Hotel.h"
+#include"../Structures/FileManager.h"
 #include"String.h"
 #include<iostream>
 #include<fstream>
@@ -11,7 +11,7 @@ class HotelController
 	Hotel *hotel = nullptr;
 	bool isRunning;
 
-	const char* FILELOG = "log.dad";
+	const char* FILELOG = "files/log.dad";
 	void changeSettings();
 	void saveSettings(fstream&);
 	void saveSettings();

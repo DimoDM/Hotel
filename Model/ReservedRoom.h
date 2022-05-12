@@ -2,7 +2,7 @@
 #include"Room.h"
 #include"Date.h"
 #include"Interval.h"
-#include"String.h"
+#include"../Structures/String.h"
 #pragma warning(disable : 4996)
 class ReservedRoom : private Room
 {

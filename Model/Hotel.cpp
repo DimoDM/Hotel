@@ -42,6 +42,7 @@ void Hotel::makeRegistration(const char* name, const Date& date)
 	}
 	else cout << "There is no such room" << endl;
 }
+
 void Hotel::makeRegistration()
 {
 	makeRegistration("unknown", currentDate);
@@ -59,7 +60,7 @@ void Hotel::makeReservation()
 
 Hotel::Hotel()
 {
-	fileName = "Rooms.csv";
+	fileName = "files/Rooms.csv";
 	init();
 }
 
@@ -76,39 +77,22 @@ const String& Hotel::getFileName() const
 
 void Hotel::init()
 {
-	resList.setFileName("resList.dat");
-	clList.setFileName("closedRooms.dat");
 	std::ifstream file;
 	cout << fileName << endl;
 	FileManager::openFile(file, fileName.c_str());
 	loadValidRooms(file);
 	isRunning = true;
 	file.close();
-}
 
-void Hotel::update()
-{
-	cout << "Type 1 to register guest.\n"
-		<< "Type 2 to see free rooms for date\n"
-		<< "Type 3 to free room\n"
-		<< "Type 4 to make report\n"
-		<< "Type 5 to search for room\n"
-		<< "Type 6 to close room\n"
-		<< "Type 0 to exit" << endl;
+	// it's required to set file name one way or another
+	//var one
+	resList.setFileName("files/resList.dat");
+	clList.setFileName("files/closedRooms.dat");
 
-	int choice;
-	cin >> choice;
-
-	switch (choice) {
-	case 0: isRunning = false; break;
-	case 1: regGuest(); break;
-	case 2: showFreeRooms(); break;
-	case 3: freeRoom(); break;
-	case 4: makeReport(); break;
-	case 5: searchRoom(); break;
-	case 6: closeRoom(); break;
-	default: cout << "Invalid input" << endl; break;
-	}
+	//var two
+	/*
+	resList = RoomList<ReservedRoom>("resList.dat");
+	clList = RoomList<ClosedRoom>("closedRoom.dat");*/
 }
 
 void Hotel::regGuest()
@@ -151,8 +135,11 @@ void Hotel::showFreeRooms()
 	date.init();
 	Interval interval(date, 1);
 	for (int i = 0; i < rooms.getSize(); i++)
-		if (!resList.isInList({ rooms[i], interval }))
-			cout << rooms[i] << " is free for today" << endl;
+		if (!resList.isInList({ rooms[i], interval })) {
+			cout << rooms[i] << " is free for the entered day";
+			if (clList.isInList({ rooms[i].id, interval })) cout << " but it is closed.";
+			cout << endl;
+		}
 
 }
 
@@ -209,9 +196,4 @@ void Hotel::closeRoom()
 	}
 	else cout << "There is no such room" << endl;
 
-}
-
-const bool Hotel::getIsRunning()
-{
-	return isRunning;
 }

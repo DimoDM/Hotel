@@ -1,6 +1,6 @@
 #include<iostream>
-#include"HotelController.h"
-#include"Vector.h"
+#include"Controller/HotelController.h"
+#include"Structures/Vector.h"
 
 using namespace std;
 

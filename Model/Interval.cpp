@@ -44,13 +44,12 @@ const int Interval::getPeriod() const
 
 bool Interval::operator==(const Interval& interval) const
 {
-	return !((date < interval.date && (date + period) < interval.date)
-		|| (interval.date < date && (interval.date + period) < date));
+	return !(*this < interval) || !(interval < *this);
 }
 
 bool Interval::operator<(const Interval& interval) const
 {
-	return date < interval.date;
+	return (date + period) < interval.date;
 }
 
 std::ostream& operator<<(std::ostream& stream, const Interval& interval)

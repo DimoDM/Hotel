@@ -1,7 +1,7 @@
 #pragma once
 #include"Date.h"
 #include<fstream>
-#include"Vector.h"
+#include"../Structures/Vector.h"
 #pragma warning(disable : 4996)
 struct Room
 {
