@@ -73,7 +73,7 @@ String::String(const String& other)
 }
 String& String::operator=(const String& other)
 {
-	std::cout << "op=" << std::endl;
+	//std::cout << "op=" << std::endl;
 
 	if (this != &other)
 	{
@@ -160,12 +160,12 @@ String::String(String&& otherString)
 	str = otherString.str;
 	size = otherString.size;
 	otherString.str = nullptr;
-	std::cout << "move constr" << std::endl;
+	//std::cout << "move constr" << std::endl;
 }
 
 String& String::operator=(String&& otherString)
 {
-	std::cout << "move op=" << std::endl;
+	//std::cout << "move op=" << std::endl;
 
 	if (this != &otherString)
 	{

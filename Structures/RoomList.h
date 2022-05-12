@@ -60,17 +60,14 @@ void RoomList<T>::loadList()
 {
 	T t;
 	std::ifstream file;
-	cout << fileName << endl;
 	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::app);
 	file.seekg(0, std::ios::beg);
 	size_t val = FileManager::getFileSize(file);
 	while (file.tellg() < val) {
 		file >> t;
 		data.push_back(t);
-		cout << "push";
 	}
 	file.close();
-	cout << "close" << endl;
 }
 
 template<typename T>
@@ -109,7 +106,6 @@ Vector<T>& RoomList<T>::getData()
 template<typename T>
 void RoomList<T>::printList()
 {
-	cout << data.getSize() << endl;
 	for (int i = 0; i < data.getSize(); i++) {
 		cout << data[i];
 	}

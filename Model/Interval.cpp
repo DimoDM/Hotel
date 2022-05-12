@@ -13,7 +13,7 @@ void Interval::init()
 	date.init();
 	setDate(date);
 	int period;
-	std::cout << "enter period of staying: ";
+	std::cout << "enter period: ";
 	std::cin >> period;
 	setPeriod(period);
 }

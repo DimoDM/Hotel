@@ -19,7 +19,7 @@ void Hotel::loadValidRooms(ifstream& file)
 
 int Hotel::isValidRoomId(const int& id)
 {
-	for (int i = 0; i < rooms.getSize(); i++) {
+	for (int i = 1; i < rooms.getSize(); i++) {
 		if (id == rooms[i].id) return i;
 	}
 	return 0;
@@ -78,7 +78,6 @@ const String& Hotel::getFileName() const
 void Hotel::init()
 {
 	std::ifstream file;
-	cout << fileName << endl;
 	FileManager::openFile(file, fileName.c_str());
 	loadValidRooms(file);
 	isRunning = true;
@@ -182,7 +181,7 @@ void Hotel::closeRoom()
 	Interval interval;
 	interval.init();
 	ClosedRoom room(id, interval);
-	cout << (bool)isValidRoomId(id) << endl;
+	cout << ((bool)isValidRoomId(id) ? true : false )<< endl;
 	if (isValidRoomId(id)) {
 		if (resList.isInList({ id, interval }))
 			resList.changeStayingPeriod(id, interval.getDate());
