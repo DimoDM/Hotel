@@ -14,6 +14,7 @@ class HotelController
 	const char* FILELOG = "log.dad";
 	void changeSettings();
 	void saveSettings(fstream&);
+	void saveSettings();
 	void loadSettings(fstream&);
 	void showOptions();
 	void enterOption();

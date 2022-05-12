@@ -143,6 +143,7 @@
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Hotel.cpp" />
+    <ClCompile Include="HotelController.cpp" />
     <ClCompile Include="Interval.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ReservedRoom.cpp" />

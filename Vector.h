@@ -16,7 +16,7 @@ private:
 public:
 	Vector();
 	Vector(const Vector&);
-	const T& operator=(const Vector&);
+	const Vector<T>& operator=(const Vector&);
 	T& operator[](int);
 	const size_t getSize() const;
 
@@ -76,7 +76,7 @@ Vector<T>::Vector(const Vector& vec)
 }
 
 template<typename T>
-const T& Vector<T>::operator=(const Vector& vec)
+const Vector<T>& Vector<T>::operator=(const Vector& vec)
 {
 	if (this != &vec) {
 		free();

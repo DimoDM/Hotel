@@ -26,7 +26,7 @@ class RoomList
 	void freeData();
 
 public:
-	RoomList();
+	RoomList() = default;
 	RoomList(const char*);
 	void setFileName(const char*);
 	const size_t getDataSize() const;
@@ -60,6 +60,7 @@ void RoomList<T>::loadList()
 {
 	T t;
 	std::ifstream file;
+	cout << fileName << endl;
 	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::app);
 	file.seekg(0, std::ios::beg);
 	size_t val = FileManager::getFileSize(file);
@@ -76,13 +77,6 @@ template<typename T>
 void RoomList<T>::freeData()
 {
 	while (data.getSize() != 0) data.pop_back();
-}
-
-template<typename T>
-RoomList<T>::RoomList()
-{
-	this->fileName = "resList.dat";
-	loadList();
 }
 
 template<typename T>

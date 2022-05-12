@@ -1,16 +1,22 @@
-﻿  Hotel.cpp
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(9,22): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(34,32): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(35,5): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(164,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(166,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(168,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(183,32): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(184,5): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(66,22): warning C4018: '<': signed/unsigned mismatch
+﻿  FileManager.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\FileManager.cpp(47,22): warning C4267: 'argument': conversion from 'size_t' to 'std::ios_base::seekdir', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\FileManager.cpp(57,22): warning C4267: 'argument': conversion from 'size_t' to 'std::ios_base::seekdir', possible loss of data
+  Hotel.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(38,32): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(39,5): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(185,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(187,2): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(189,40): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(204,32): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(205,5): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(67,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(60): message : while compiling class template member function 'void RoomList<ReservedRoom>::loadList(void)'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(85): message : see reference to function template instantiation 'void RoomList<ReservedRoom>::loadList(void)' being compiled
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(83): message : while compiling class template member function 'RoomList<ReservedRoom>::RoomList(void)'
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(57): message : see reference to function template instantiation 'RoomList<ReservedRoom>::RoomList(void)' being compiled
-C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(15): message : see reference to class template instantiation 'RoomList<ReservedRoom>' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(94): message : see reference to function template instantiation 'void RoomList<ReservedRoom>::loadList(void)' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\RoomList.h(91): message : while compiling class template member function 'void RoomList<ReservedRoom>::setFileName(const char *)'
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.cpp(79): message : see reference to function template instantiation 'void RoomList<ReservedRoom>::setFileName(const char *)' being compiled
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\Hotel.h(17): message : see reference to class template instantiation 'RoomList<ReservedRoom>' being compiled
+  HotelController.cpp
+C:\Users\Dimo\Desktop\Hotel\Hotel\Hotel\HotelController.cpp(2,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  main.cpp
+  Generating Code...
   Hotel.vcxproj -> C:\Users\Dimo\Desktop\Hotel\Hotel\x64\Debug\Hotel.exe

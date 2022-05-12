@@ -3,6 +3,11 @@ using namespace std;
 
 void Hotel::loadValidRooms(ifstream& file)
 {
+	size_t fileSize = FileManager::getFileSize(file);
+	if (fileSize <= 9) {
+		cout << "Error! There are no rooms in the list or list is in incorrect format.";
+		exit(1);
+	}
 	file.seekg(7, ios::beg);
 	Room tempRoom;
 	while (!file.eof()) {
@@ -54,7 +59,6 @@ void Hotel::makeReservation()
 
 Hotel::Hotel()
 {
-	//resList.setFileName("newResList");
 	fileName = "Rooms.csv";
 	init();
 }
@@ -72,8 +76,10 @@ const String& Hotel::getFileName() const
 
 void Hotel::init()
 {
+	resList.setFileName("resList.dat");
 	clList.setFileName("closedRooms.dat");
 	std::ifstream file;
+	cout << fileName << endl;
 	FileManager::openFile(file, fileName.c_str());
 	loadValidRooms(file);
 	isRunning = true;

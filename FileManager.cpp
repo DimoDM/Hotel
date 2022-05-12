@@ -5,7 +5,7 @@ void FileManager::openFile(std::ofstream& file, const char* fileName, std::ios_b
 {
 	file.open(fileName, mode);
 	if (!file.is_open()) {
-		perror("file error");
+		perror(fileName);
 		exit(1);
 	}
 }
@@ -14,7 +14,7 @@ void FileManager::openFile(std::ifstream& file, const char* fileName, std::ios_b
 {
 	file.open(fileName, mode);
 	if (!file.is_open()) {
-		perror("file error");
+		perror(fileName);
 		exit(1);
 	}
 }
@@ -23,7 +23,7 @@ void FileManager::openFile(std::fstream& file, const char* fileName, std::ios_ba
 {
 	file.open(fileName, mode);
 	if (!file.is_open()) {
-		perror("file error");
+		perror(fileName);
 		exit(1);
 	}
 }
