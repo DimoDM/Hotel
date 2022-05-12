@@ -7,8 +7,8 @@ void Date::nextDate(const int period)
 {
 	if (year % 4 == 0) numDaysInMonth[1] = 29;
 	else numDaysInMonth[1] = 28;
-	if (day + period > numDaysInMonth[month]) {
-		int residue = period - (numDaysInMonth[month] - day);
+	if (day + period > numDaysInMonth[month - 1]) {
+		int residue = period - (numDaysInMonth[month - 1]);
 		if (++month > 12) {
 			month = 1;
 			year++;

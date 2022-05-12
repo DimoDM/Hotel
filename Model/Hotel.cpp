@@ -85,14 +85,8 @@ void Hotel::init()
 	file.close();
 
 	// it's required to set file name one way or another
-	//var one
 	resList.setFileName("files/resList.dat");
 	clList.setFileName("files/closedRooms.dat");
-
-	//var two
-	/*
-	resList = RoomList<ReservedRoom>("resList.dat");
-	clList = RoomList<ClosedRoom>("closedRoom.dat");*/
 }
 
 void Hotel::regGuest()

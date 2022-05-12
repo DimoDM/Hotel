@@ -83,6 +83,18 @@
     <ClInclude Include="Controller\HotelController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UnitTests\IntervalUnitTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\UnitTests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\DateUnitTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTests\HotelUnitTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="files\Rooms.csv" />

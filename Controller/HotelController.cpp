@@ -85,7 +85,7 @@ void HotelController::enterOption()
 	case 4: hotel->makeReport(); break;
 	case 5: hotel->searchRoom(); break;
 	case 6: hotel->closeRoom(); break;
-	case 7: currentDate.init(); saveSettings(); break;
+	case 7: currentDate.init(); saveSettings(); hotel->currentDate = currentDate; break;
 	default: cout << "Invalid input" << endl; break;
 	}
 }
@@ -108,6 +108,7 @@ void HotelController::init()
 	}
 	else loadSettings(file);
 	file.close();
+	hotel->currentDate = currentDate;
 }
 
 void HotelController::update()
@@ -120,4 +121,9 @@ void HotelController::update()
 const bool HotelController::isStillRunning() const
 {
 	return isRunning;
+}
+
+HotelController::~HotelController()
+{
+	delete hotel;
 }

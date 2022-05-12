@@ -10,6 +10,7 @@ class HotelController
 {
 	Hotel *hotel = nullptr;
 	bool isRunning;
+	Date currentDate;
 
 	const char* FILELOG = "files/log.dad";
 	void changeSettings();
@@ -25,5 +26,7 @@ public:
 	void init();
 	void update();
 	const bool isStillRunning() const;
+
+	~HotelController();
 
 };

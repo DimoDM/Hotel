@@ -9,8 +9,6 @@
 #include"../Structures/Vector.h"
 using namespace std;
 
-static Date currentDate = Date();
-
 class Hotel
 {
 	Vector<Room> rooms;
@@ -35,6 +33,7 @@ public:
 	Hotel();
 	Hotel(const char*);
 	const String& getFileName() const;
+	Date currentDate;
 
 	void regGuest(); // make reservation for room
 	void makeReport(); //make txt file for room's busyness

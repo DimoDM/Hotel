@@ -44,7 +44,15 @@ const int Interval::getPeriod() const
 
 bool Interval::operator==(const Interval& interval) const
 {
-	return !(*this < interval) || !(interval < *this);
+	if (date < interval.date) {
+		if ((date + period) < interval.date) return false;
+		return true;
+	}
+	else if (interval.date < date) {
+		if ((interval.date + interval.period) < date) return false;
+		return true;
+	}
+	return true;
 }
 
 bool Interval::operator<(const Interval& interval) const
