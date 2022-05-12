@@ -20,12 +20,12 @@ class Hotel
 	bool isRunning;
 
 	void loadValidRooms(ifstream&);
-	int isValidRoomId(const int&);
+	int getRoomIndex(const int&);
+	bool isValidRoomId(const int&);
 	void makeRegistration(const char* name, const Date& date);
 	void makeRegistration();
 	void makeReservation();
-	const Room& searchRoom(const int, const Interval);
-	void init();
+	const Room& searchRoom(int, const Interval&);
 
 
 public:
@@ -34,6 +34,7 @@ public:
 	Hotel(const char*);
 	const String& getFileName() const;
 	Date currentDate;
+	void init();
 
 	void regGuest(); // make reservation for room
 	void makeReport(); //make txt file for room's busyness

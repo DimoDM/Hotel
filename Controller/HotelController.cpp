@@ -6,10 +6,10 @@ void HotelController::changeSettings()
 	int choice;
 	String roomFile = "";
 	while (true) {
-		cout << "Type 1 to use default settings and exit.\n"
-			<< "Type 2 to manually enter current date.\n";
-		if (roomFile.getSize() == 0) cout << "Type 3 to manually enter name for valid room's file(once set it cannot be changed)\n";
-		cout << "Type 0 to exit this menu\n";
+		cout << "Type 1 to use default settings and exit." << endl
+			<< "Type 2 to manually enter current date." << endl;
+		if (roomFile.getSize() == 0) cout << "Type 3 to manually enter name for valid room's file(once set it cannot be changed)" << endl;
+		cout << "Type 0 to exit this menu" << endl;
 
 		cin >> choice;
 		switch (choice) {
@@ -19,17 +19,16 @@ void HotelController::changeSettings()
 		case 3: cout << "file name: ";
 			cin >> roomFile; hotel = new Hotel(roomFile.c_str());
 			break;
-		default:cout << "Invalid input\n"; break;
+		default:cout << "Invalid input" << endl; break;
 		}
 	}
 
 }
 
-void HotelController::saveSettings(fstream& file)
+void HotelController::saveSettings(ofstream& file)
 {
 	if (!file.is_open()) {
-		cout << "file is not open\n";
-		return;
+		throw new exception("system file is not open");
 	}
 	file.write((const char*)&currentDate, sizeof(Date));
 	size_t size = strlen(hotel->getFileName().c_str());
@@ -39,17 +38,16 @@ void HotelController::saveSettings(fstream& file)
 
 void HotelController::saveSettings()
 {
-	fstream file;
-	FileManager::openFile(file, FILELOG, ios::binary | ios::out | ios::trunc);
+	ofstream file;
+	FileManager::openFile(file, FILELOG, ios::binary | ios::trunc);
 	saveSettings(file);
 	file.close();
 }
 
-void HotelController::loadSettings(fstream& file)
+void HotelController::loadSettings(ifstream& file)
 {
 	if (!file.is_open()) {
-		cout << "file is not open\n";
-		return;
+		throw new exception("system file is not open");
 	}
 	file.read((char*)&currentDate, sizeof(Date));
 	size_t size;;
@@ -62,13 +60,13 @@ void HotelController::loadSettings(fstream& file)
 
 void HotelController::showOptions()
 {
-	cout << "Type 1 to register guest.\n"
-		<< "Type 2 to see free rooms for date\n"
-		<< "Type 3 to free room\n"
-		<< "Type 4 to make report\n"
-		<< "Type 5 to search for room\n"
-		<< "Type 6 to close room\n"
-		<< "Type 7 to change current date\n"
+	cout << "Type 1 to register guest." << endl
+		<< "Type 2 to see free rooms for date" << endl
+		<< "Type 3 to free room" << endl
+		<< "Type 4 to make report" << endl
+		<< "Type 5 to search for room" << endl
+		<< "Type 6 to close room" << endl
+		<< "Type 7 to change current date" << endl
 		<< "Type 0 to exit" << endl;
 }
 
@@ -97,17 +95,20 @@ HotelController::HotelController()
 
 void HotelController::init()
 {
-	fstream file;
-	FileManager::openFile(file, FILELOG, ios::binary | ios::app | ios::in | ios::out);
-	if (FileManager::getFileSize(file) == 0) {
-		cout << "This is your first log in, so you can set some settings.\n";
-		changeSettings();
-		if (hotel == nullptr) hotel = new Hotel();
-		saveSettings(file);
+	ifstream file;
+	FileManager::openFile(file, FILELOG, ios::binary | ios::app);
+	if (FileManager::getFileSize(file) != 0) {
+		loadSettings(file);
+		file.close();
+		hotel->init();
+		hotel->currentDate = currentDate;
+		return;
 	}
-	else loadSettings(file);
 	file.close();
-	hotel->currentDate = currentDate;
+	cout << "This is your first log in, so you can set some settings." << endl;
+	changeSettings();
+	if (hotel == nullptr) hotel = new Hotel();
+	saveSettings();
 }
 
 void HotelController::update()

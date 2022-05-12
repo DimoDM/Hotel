@@ -16,9 +16,9 @@ public:
 
 	void enter();
 
-	void setYear(const int);
-	void setMonth(const int);
-	void setDay(const int);
+	void setYear(int);
+	void setMonth(int);
+	void setDay(int);
 
 	const int getYear() const;
 	const int getMonth() const;

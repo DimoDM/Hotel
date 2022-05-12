@@ -169,6 +169,7 @@
     <ClInclude Include="UnitTests\UnitTests.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="files\resList.dat" />
     <None Include="files\Rooms.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

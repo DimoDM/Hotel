@@ -17,12 +17,16 @@ void Hotel::loadValidRooms(ifstream& file)
 	rooms.pop_back(); // strange behavior from eof couses last element to be saved twice
 }
 
-int Hotel::isValidRoomId(const int& id)
+int Hotel::getRoomIndex(const int& id)
 {
-	for (int i = 1; i < rooms.getSize(); i++) {
+	for (int i = 0; i < rooms.getSize(); i++) {
 		if (id == rooms[i].id) return i;
 	}
-	return 0;
+	return rooms.getSize();
+}
+
+bool Hotel::isValidRoomId(const int& id) {
+	return getRoomIndex(id) != rooms.getSize();
 }
 
 void Hotel::makeRegistration(const char* name, const Date& date)
@@ -61,13 +65,11 @@ void Hotel::makeReservation()
 Hotel::Hotel()
 {
 	fileName = "files/Rooms.csv";
-	init();
 }
 
 Hotel::Hotel(const char* fileName)
 {
 	this->fileName = fileName;
-	init();
 }
 
 const String& Hotel::getFileName() const
@@ -112,12 +114,12 @@ void Hotel::makeReport()
 		+= interval.getDate().getMonth()) += "-")
 		+= interval.getDate().getDay()) += ".txt";
 
-	std::fstream file(fileName.c_str(), std::ios::out | std::ios::app);
+	std::ofstream file(fileName.c_str(), std::ios::app);
 	for (int i = 0; i < resList.getDataSize(); i++) {
-		//TODO
-		//fix == operation cuz I think don't work
-		if (interval == resList.getData()[i].getInterval())
+		if (interval == resList.getData()[i].getInterval()) {
 			file << resList.getData()[i];
+			cout << resList.getData()[i];
+		}
 	}
 	
 }
@@ -158,7 +160,7 @@ void Hotel::searchRoom()
 	cout << searchRoom(beds, interval) << "is free" << endl;
 }
 
-const Room& Hotel::searchRoom(const int beds, const Interval interval)
+const Room& Hotel::searchRoom(int beds, const Interval& interval)
 {
 	//TODO better
 	int currentMinBeds = rooms[0].numberBeds > beds ? rooms[0].numberBeds : beds;

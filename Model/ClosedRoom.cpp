@@ -35,21 +35,24 @@ const Interval& ClosedRoom::getInterval() const
 	return interval;
 }
 
+std::ifstream& ClosedRoom::readFile(std::ifstream& stream)
+{
+	stream.read((char*)&this->id, sizeof(size_t));
+	stream.read((char*)&this->interval, sizeof(Interval));
+	return stream;
+}
+
+std::ofstream& ClosedRoom::writeFile(std::ofstream& stream) {
+	stream.write((const char*)&this->getId(), sizeof(size_t));
+	stream.write((const char*)&this->getInterval(), sizeof(Interval));
+	return stream;
+}
+
 std::ofstream& operator<<(std::ofstream& stream, const ClosedRoom& room)
 {
-	stream.write((const char*)&room.getId(), sizeof(size_t));
-	stream.write((const char*)&room.getInterval(), sizeof(Interval));
+	stream << "id of room: " << room.getId() << " ,Date: " << room.getInterval() << '\n';
 	return stream;
 }
-
-std::ifstream& operator>>(std::ifstream& stream, ClosedRoom& room)
-{
-	size_t val;
-	stream.read((char*)&room.id, sizeof(size_t));
-	stream.read((char*)&room.interval, sizeof(Interval));
-	return stream;
-}
-
 
 std::ostream& operator<<(std::ostream& stream, const ClosedRoom& room)
 {

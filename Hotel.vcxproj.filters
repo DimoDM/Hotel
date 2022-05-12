@@ -98,5 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="files\Rooms.csv" />
+    <None Include="files\resList.dat" />
   </ItemGroup>
 </Project>

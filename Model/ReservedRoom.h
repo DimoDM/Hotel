@@ -31,7 +31,8 @@ public:
 	const size_t& getId() const;
 	const Interval& getInterval() const;
 
-	friend std::ifstream& operator>>(std::ifstream&, ReservedRoom&);
+	std::ifstream& readFile(std::ifstream&);
+	std::ofstream& writeFile(std::ofstream&);
 };
 
 std::ostream& operator<<(std::ostream&, const ReservedRoom&);

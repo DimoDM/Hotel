@@ -49,7 +49,8 @@ void RoomList<T>::saveChanges()
 	std::ofstream file;
 	FileManager::openFile(file, fileName.c_str(), std::ios::binary | std::ios::trunc);
 	for (int i = 0; i < data.getSize(); i++) {
-		file << data[i];
+		//file << data[i];
+		data[i].writeFile(file);
 	}
 	file.close();
 }
@@ -63,7 +64,8 @@ void RoomList<T>::loadList()
 	file.seekg(0, std::ios::beg);
 	size_t val = FileManager::getFileSize(file);
 	while (file.tellg() < val) {
-		file >> t;
+		//file >> t;
+		t.readFile(file);
 		data.push_back(t);
 	}
 	file.close();

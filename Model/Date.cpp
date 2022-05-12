@@ -5,17 +5,18 @@
 
 void Date::nextDate(const int period)
 {
-	if (year % 4 == 0) numDaysInMonth[1] = 29;
-	else numDaysInMonth[1] = 28;
-	if (day + period > numDaysInMonth[month - 1]) {
-		int residue = period - (numDaysInMonth[month - 1]);
-		if (++month > 12) {
-			month = 1;
-			year++;
-		}
-		nextDate(residue);
+	numDaysInMonth[1] = year % 4 == 0 ? 29 : 28;
+
+	if (day + period <= numDaysInMonth[month - 1]) {
+		day += period;
+		return;
 	}
-	else day += period;
+	int residue = period - (numDaysInMonth[month - 1]);
+	if (++month > 12) {
+		month = 1;
+		year++;
+	}
+	nextDate(residue);
 }
 
 Date::Date(int year, int mounth, int day)
@@ -39,31 +40,31 @@ void Date::enter()
 	setDay(date.day);
 }
 
-void Date::setYear(const int year)
+void Date::setYear(int year)
 {
-	if (year >= 2022 || year <= 2023) this->year = year;
-	else {
+	if (year < 2021 || year > 2025) {
 		std::cout << "Invalid year. Year 2022 was set\n";
-		this->year = 2022;
+		year = 2022;
 	}
+	this->year = year;
 }
 
-void Date::setMonth(const int mounth)
+void Date::setMonth(int mounth)
 {
-	if (mounth >= 1 || mounth <= 12) this->month = mounth;
-	else {
+	if (mounth < 1 || mounth > 12) {
 		std::cout << "Invalid mounth. Mounth May set\n";
-		this->month = 5;
+		month = 5;
 	}
+	this->month = mounth;
 }
 
-void Date::setDay(const int day)
+void Date::setDay(int day)
 {
-	if (day >= 1 || day <= numDaysInMonth[month]) this->day = day;
-	else {
+	if (day < 1 || day > numDaysInMonth[month]) {
 		std::cout << "Invalid day. Day 1 set " << std::endl;
-		this->day = 1;
+		day = 1;
 	}
+	this->day = day;
 }
 
 const int Date::getYear() const
