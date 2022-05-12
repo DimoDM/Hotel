@@ -31,25 +31,23 @@ bool Hotel::isValidRoomId(const int& id) {
 
 void Hotel::makeRegistration(const char* name, const Date& date)
 {
-	cout << "Enter period of staying in days: ";
-	int period;
-	cin >> period;
 	cout << "Enter number of the room: ";
 	size_t id;
 	cin >> id;
-	Interval interval(date, period);
-	ReservedRoom res(name, id, interval);
-	cout <<(bool) isValidRoomId(id) << endl;
-	if (isValidRoomId(id)) {
-		if (!clList.isInList({ id, interval })) resList.addToList(res);
-		else cout << "There is no registered guest in the room, but no one can be accommodated in it.\n";
+	if (!isValidRoomId(id)) {
+		cout << "There is no such room" << endl;
+		return;
 	}
-	else cout << "There is no such room" << endl;
-}
-
-void Hotel::makeRegistration()
-{
-	makeRegistration("Guest", currentDate);
+	cout << "Enter period of staying in days: ";
+	int period;
+	cin >> period;
+	Interval interval(date, period);
+	if (clList.isInList(ClosedRoom(id, interval))) {
+		cout << "There is no registered guest in the room, but no one can be registered in it becouse room is closed." << endl;
+		return;
+	}
+	ReservedRoom res(name, id, interval);
+	resList.addToList(res);
 }
 
 void Hotel::makeReservation()
@@ -82,7 +80,6 @@ void Hotel::init()
 	std::ifstream file;
 	FileManager::openFile(file, fileName.c_str());
 	loadValidRooms(file);
-	isRunning = true;
 	file.close();
 
 	// it's required to set file name one way or another
@@ -92,16 +89,20 @@ void Hotel::init()
 
 void Hotel::regGuest()
 {
-	cout << "Type 0 to register now" << endl << "Type 1 to make reservation" << endl;
+	cout << "Type 0 to register now as guest" << endl
+		<< "Type 1 to make reservation" << endl 
+		<< "Type 2 to close this request" << endl;
 	bool choice;
 	cin >> choice;
-	if (choice) {
-		makeReservation();
-		resList.printList();
-	}
-	else {
-		makeRegistration();
-		resList.printList();
+	switch (choice)
+	{
+	case 0: makeRegistration("Guest", currentDate); break;
+	case 1: makeReservation(); break;
+	case 2: return;
+	default:
+		cout << "Invalid input" << endl;
+		regGuest();
+		break;
 	}
 }
 
@@ -143,10 +144,11 @@ void Hotel::freeRoom()
 	cout << "Enter id of room: ";
 	int id;
 	cin >> id;
-	if (isValidRoomId(id)) {
-		resList.changeStayingPeriod(Room(id), currentDate);
+	if (!isValidRoomId(id)) {
+		cout << "Invalid id";
+		return;
 	}
-	else cout << "Invalid id" << endl;
+	resList.changeStayingPeriod(Room(id), currentDate);
 }
 
 void Hotel::searchRoom()
@@ -185,7 +187,7 @@ void Hotel::closeRoom()
 	size_t id;
 	cout << "Enter number of the room: ";
 	cin >> id;
-	if (isValidRoomId(id)) {
+	if (!isValidRoomId(id)) {
 		cout << "There is no such room" << endl;
 		return;
 	}

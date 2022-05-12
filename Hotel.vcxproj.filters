@@ -92,7 +92,7 @@
     <ClInclude Include="UnitTests\DateUnitTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UnitTests\HotelUnitTest.h">
+    <ClInclude Include="UnitTests\RoomListUnitTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

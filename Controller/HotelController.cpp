@@ -117,6 +117,7 @@ void HotelController::update()
 	cout << endl << "Current " << currentDate << endl << endl;
 	showOptions();
 	enterOption();
+	system("pause");
 }
 
 const bool HotelController::isStillRunning() const

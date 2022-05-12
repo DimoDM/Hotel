@@ -16,8 +16,8 @@ public:
 	const Date getDate() const;
 	const int getPeriod() const;
 
-	bool operator==(const Interval& interval) const;
-	bool operator<(const Interval& interval) const;
+	bool operator==(const Interval& interval) const; //checks if the intervals overlap
+	bool operator<(const Interval& interval) const; //checks if the end of first interval is smaller than beg of second one
 
 	friend std::istream& operator>>(std::istream& stream, Interval& interval);
 };

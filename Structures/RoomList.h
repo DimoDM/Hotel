@@ -4,13 +4,11 @@
 #include"../Model/ReservedRoom.h"
 #include"../Model/Interval.h"
 #include<fstream>
-#include<ostream>
-#include<istream>
 #include<iostream>
 #include"FileManager.h"
 using namespace std;
 
-template <typename T>
+template <typename T> //T can only be child of Room, see lines 14-16
 class RoomList
 {
 	//source for limit T:
@@ -35,12 +33,7 @@ public:
 	bool isInList(const T&);
 	void removeFromList(const T&);
 	void changeStayingPeriod(const Room, const Date);
-	//void makeRaport(const Interval&);
-	//void removeFromList(const Room&, const Interval&);
 
-	//friend std::ostream& operator<<(std::ostream&, const ReservationList&);
-	
-	//~ReservationList();
 };
 
 template<typename T>

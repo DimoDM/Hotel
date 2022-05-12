@@ -164,8 +164,8 @@
     <ClInclude Include="Structures\String.h" />
     <ClInclude Include="Structures\Vector.h" />
     <ClInclude Include="UnitTests\DateUnitTest.h" />
-    <ClInclude Include="UnitTests\HotelUnitTest.h" />
     <ClInclude Include="UnitTests\IntervalUnitTest.h" />
+    <ClInclude Include="UnitTests\RoomListUnitTest.h" />
     <ClInclude Include="UnitTests\UnitTests.h" />
   </ItemGroup>
   <ItemGroup>
