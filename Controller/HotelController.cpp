@@ -14,11 +14,11 @@ void HotelController::changeSettings()
 
 		cin >> choice;
 		switch (choice) {
-		case 1: hotel = new Hotel();
-		case 0: if (roomFile.getSize() == 0 && hotel == nullptr) hotel = new Hotel(roomFile.c_str()); return;
+		case 1: hotel = new Hotel(); hotel->init();
+		case 0: if (roomFile.getSize() == 0 && hotel == nullptr) { hotel = new Hotel(roomFile.c_str()); hotel->init(); } return;
 		case 2: cin >> currentDate; break;
 		case 3: cout << "file name: ";
-			cin >> roomFile; hotel = new Hotel(roomFile.c_str());
+			cin >> roomFile; hotel = new Hotel(roomFile.c_str()); hotel->init();
 			break;
 		default:cout << "Invalid input" << endl; break;
 		}
@@ -108,7 +108,10 @@ void HotelController::init()
 	file.close();
 	cout << "This is your first log in, so you can set some settings." << endl;
 	changeSettings();
-	if (hotel == nullptr) hotel = new Hotel();
+	if (hotel == nullptr) {
+		hotel = new Hotel();
+		hotel->init();
+	}
 	saveSettings();
 }
 

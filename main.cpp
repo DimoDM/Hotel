@@ -8,7 +8,6 @@ int main()
 	//run(); //start unit tests
 	HotelController hotel;
 	hotel.init();
-	//hotel.getNumOfRooms();
 	while (hotel.isStillRunning()) {
 
 		hotel.update();
